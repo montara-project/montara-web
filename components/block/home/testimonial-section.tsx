@@ -1,4 +1,4 @@
-import { Testimonial, testimonialsRow1, testimonialsRow2 } from '@/data/mock';
+import { Testimonial, testimonialsRow1, testimonialsRow2 } from '@/data/mock'
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
