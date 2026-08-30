@@ -28,7 +28,7 @@ type SectionProps = PropsWithChildren & SectionTitleProps
 
 export function Section({ title, tag, description, children }: SectionProps) {
   return (
-    <div className="w-full px-4 md:px-8 pt-32 pb-24">
+    <div className="w-full pt-32 pb-24">
       <SectionTitle title={title} tag={tag} description={description} />
       {children}
     </div>

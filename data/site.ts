@@ -188,23 +188,15 @@ export interface TeamMember {
   name: string
   role: string
   bio: string
+  photo: string
 }
 
 export const team: TeamMember[] = [
   {
-    name: 'Your Name',
+    name: 'N. Fajri',
     role: 'Founder & Engineer',
     bio: 'Full-stack engineer focused on building reliable, scalable products end to end.',
-  },
-  {
-    name: 'Team Member',
-    role: 'Backend Engineer',
-    bio: 'Specializes in APIs, data modeling, and distributed systems.',
-  },
-  {
-    name: 'Team Member',
-    role: 'DevOps Engineer',
-    bio: 'Automates infrastructure and keeps deployments smooth and observable.',
+    photo: '/assets/images/teams/fajri.jpeg',
   },
 ]
 
