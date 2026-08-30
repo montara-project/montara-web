@@ -1,80 +1,35 @@
-const links = [
-  {
-    href: 'https://github.com/cloudflare/vinext',
-    label: 'vinext',
-  },
-  {
-    href: 'https://developers.cloudflare.com/workers/',
-    label: 'Workers',
-  },
-]
+import { CtaSection } from '@/components/block/home/cta-section'
+import { FeaturesSection } from '@/components/block/home/features-section'
+import { HeroSection } from '@/components/block/home/hero-section'
+import { IntegrationsSection } from '@/components/block/home/integration-section'
+import { LogoMarquee } from '@/components/block/home/logo-marquee'
+import { PerksSection } from '@/components/block/home/perk-section'
+import { PricingSection } from '@/components/block/home/pricing-section'
+import { SiteFooter } from '@/components/block/home/site-footer'
+import { SiteHeader } from '@/components/block/home/site-header'
+import { TestimonialsSection } from '@/components/block/home/testimonial-section'
 
-export const revalidate = 300
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-slate-50 px-6 py-10 text-slate-950">
-      <section className="mx-auto flex max-w-4xl flex-col gap-8">
-        <div className="flex flex-col gap-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-orange-600">
-            vinext + Cloudflare Workers
-          </p>
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight sm:text-5xl">
-            Build Next.js-style apps with Vite and deploy them to the edge.
-          </h1>
-          <p className="max-w-2xl text-lg leading-8 text-slate-700">
-            This App Router project is wired for vinext, Tailwind CSS, and Cloudflare Workers.
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h2 className="font-semibold">Develop</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Run the vinext dev server locally.
-            </p>
-            <code className="mt-4 block rounded bg-slate-100 px-3 py-2 text-sm">pnpm run dev</code>
-          </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h2 className="font-semibold">Build</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Create Worker-ready production output.
-            </p>
-            <code className="mt-4 block rounded bg-slate-100 px-3 py-2 text-sm">
-              pnpm run build
-            </code>
-          </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h2 className="font-semibold">Deploy</h2>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Ship the generated Worker with Wrangler.
-            </p>
-            <code className="mt-4 block rounded bg-slate-100 px-3 py-2 text-sm">
-              pnpm run deploy
-            </code>
-          </div>
-        </div>
-
-        <nav className="flex flex-wrap gap-3">
-          {links.map((link) => (
-            <a
-              className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium hover:bg-slate-100"
-              href={link.href}
-              key={link.href}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium hover:bg-slate-100"
-            href="/api/hello"
-          >
-            API route
-          </a>
-        </nav>
-      </section>
-    </main>
+    <>
+      <div
+        id="home"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(23,23,23,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,23,23,0.4)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] h-full mt-[63px]"
+      />
+      <div className="relative w-full h-full">
+        <SiteHeader />
+        <main className="mx-auto w-full z-40 relative max-w-7xl">
+          <HeroSection />
+          <LogoMarquee />
+          <IntegrationsSection />
+          <FeaturesSection />
+          <PerksSection />
+          <PricingSection />
+          <TestimonialsSection />
+          <CtaSection />
+        </main>
+        <SiteFooter />
+      </div>
+    </>
   )
 }
