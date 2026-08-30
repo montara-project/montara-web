@@ -26,7 +26,9 @@ export function ProjectsSection() {
           {featured.map((project) => (
             <Link
               key={project.title}
-              href="/projects"
+              href={project.link ?? '/projects'}
+              target={project.link ? '_blank' : undefined}
+              rel={project.link ? 'noreferrer' : undefined}
               className="group relative flex flex-col rounded-2xl border border-border/60 p-6 transition-colors hover:border-primary/60"
             >
               <div className="flex items-center justify-between">

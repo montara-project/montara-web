@@ -112,46 +112,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Real-time Analytics Platform',
-    category: 'Backend',
-    description:
-      'A high-throughput event ingestion pipeline processing millions of events per day with sub-second query latency.',
-    techStack: ['Go', 'Kafka', 'PostgreSQL', 'Redis'],
-  },
-  {
-    title: 'SaaS Dashboard',
+    title: 'House of Wizard',
     category: 'Frontend',
     description:
-      'A multi-tenant analytics dashboard with real-time charts, role-based access, and a polished design system.',
-    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      'An education platform for aspiring Web3 data analysts, teaching blockchain analytics, on-chain data analysis, and Web3 insights.',
+    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Web3'],
+    link: 'https://house-of-wizard.xyz',
   },
   {
-    title: 'Cloud Migration & CI/CD',
-    category: 'DevOps',
-    description:
-      'Migrated a legacy deployment to a containerized, auto-scaling infrastructure with zero-downtime releases.',
-    techStack: ['Docker', 'Kubernetes', 'AWS', 'Terraform'],
-  },
-  {
-    title: 'E-commerce API',
-    category: 'Backend',
-    description:
-      'A headless commerce API with inventory, payments, and order management built for high concurrency.',
-    techStack: ['Node.js', 'GraphQL', 'PostgreSQL', 'Stripe'],
-  },
-  {
-    title: 'Marketing Website',
+    title: 'Moneyflow ID',
     category: 'Frontend',
     description:
-      'A high-performance, SEO-friendly marketing site with a component-driven content model.',
-    techStack: ['Next.js', 'Tailwind CSS', 'Vercel'],
+      'A cashflow management web app that helps users track income, categorize expenses, create budgets, and scan receipts to stay in control of their finances.',
+    techStack: ['React', 'Vite', 'Tailwind CSS'],
+    link: 'https://moneyflow.id',
   },
   {
-    title: 'Observability Stack',
-    category: 'DevOps',
+    title: 'Audiopintar',
+    category: 'Frontend',
     description:
-      'Centralized logging, metrics, and alerting across services with on-call runbooks and dashboards.',
-    techStack: ['Prometheus', 'Grafana', 'Loki', 'Alertmanager'],
+      'An AI-powered audio platform for audiobooks and podcasts with AI summaries, chat, and smart insights to transform how users learn.',
+    techStack: ['Next.js', 'React', 'Tailwind CSS', 'AI'],
+    link: 'https://audiopintar-nu.vercel.app/',
+  },
+  {
+    title: 'masb0ymas.com',
+    category: 'Frontend',
+    description:
+      'A personal website and blog covering technology, web development, AI, and Web3, with featured projects and tutorials.',
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
+    link: 'https://masb0ymas.com',
   },
 ]
 
