@@ -12,7 +12,7 @@ export default function PublicLayout({ children }: PropsWithChildren) {
       />
       <div className="relative w-full h-full">
         <SiteHeader />
-        <main className="mx-auto w-full z-40 relative max-w-7xl">{children}</main>
+        <main className="mx-auto w-full z-40 px-4 md:px-12 relative max-w-7xl">{children}</main>
         <SiteFooter />
       </div>
     </>

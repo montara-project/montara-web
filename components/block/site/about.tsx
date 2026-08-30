@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 import { Section } from '@/components/common/section'
 import { site, team } from '@/data/site'
 
@@ -15,7 +17,7 @@ export default function AboutSection() {
         </p>
       </div>
 
-      <div className="mt-16 max-w-4xl mx-auto">
+      <div className="mt-16 mx-auto">
         <h2 className="text-2xl font-heading font-medium text-center">The team</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
           {team.map((member) => (
@@ -23,12 +25,13 @@ export default function AboutSection() {
               key={member.name}
               className="flex flex-col rounded-2xl border border-border/60 p-6"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-foreground/70 font-medium">
-                {member.name
-                  .split(' ')
-                  .map((n) => n[0])
-                  .join('')}
-              </div>
+              <Image
+                src={member.photo}
+                alt={member.name}
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-full object-cover"
+              />
               <h3 className="text-lg font-heading font-medium mt-4">{member.name}</h3>
               <p className="text-sm text-primary/80 mt-1">{member.role}</p>
               <p className="text-sm text-muted-foreground mt-3">{member.bio}</p>

@@ -11,8 +11,8 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="fixed top-4 inset-x-0 mx-auto max-w-6xl px-2 md:px-12 z-[100] transform th h-12">
-      <div className="size-full mx-auto max-w-6xl px-4 backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] md:px-2 flex items-center justify-start">
+    <header className="fixed top-4 inset-x-0 mx-auto max-w-7xl px-2 md:px-12 z-[100] transform th h-12">
+      <div className="size-full mx-auto max-w-7xl px-4 backdrop-blur-lg rounded-xl lg:rounded-2xl border border-[rgba(124,124,124,0.2)] md:px-2 flex items-center justify-start">
         <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
           <div className="flex items-center flex-1 lg:flex-none pl-1">
             <Link href="/" className="text-lg font-semibold text-foreground">

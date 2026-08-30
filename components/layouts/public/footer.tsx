@@ -84,7 +84,7 @@ export function SiteFooter() {
   return (
     <footer className="w-full py-10 relative">
       <div className="w-full h-full">
-        <div className="size-full mx-auto max-w-6xl px-4 md:px-12 relative flex flex-col md:flex-row justify-between pb-40 overflow-hidden footer">
+        <div className="size-full mx-auto max-w-7xl px-4 md:px-12 relative flex flex-col md:flex-row justify-between pb-40 overflow-hidden footer">
           <div className="absolute inset-0 w-full -z-10" aria-hidden="true">
             <canvas className="size-full" />
           </div>
@@ -131,7 +131,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="w-full h-full">
-        <div className="size-full mx-auto max-w-6xl px-4 md:px-12 pt-10 flex items-center justify-between relative">
+        <div className="size-full mx-auto max-w-7xl px-4 md:px-12 pt-10 flex items-center justify-between relative">
           <p className="text-sm text-secondary-foreground">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
