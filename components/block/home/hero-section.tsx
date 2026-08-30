@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { SpotlightSvg } from '@/components/common/svg'
-import { asset } from '@/data/mock'
+import { asset, site } from '@/data/site'
 
 export function HeroSection() {
   return (
@@ -17,38 +17,38 @@ export function HeroSection() {
             <div className="w-1.5 h-1.5 rounded-full bg-primary flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
           <span className="inline-flex items-center justify-center gap-2 animate-text-gradient animate-background-shine bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-sm text-transparent">
-            Build for the future
+            Build something different
             <span className="text-xs text-secondary-foreground px-1.5 py-0.5 rounded-full bg-gradient-to-b from-foreground/20 to-foreground/10 flex items-center justify-center">
-              What&apos;s new
+              Available for projects
               <ArrowRight className="w-3.5 h-3.5 ml-1 text-foreground/50" />
             </span>
           </span>
         </div>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent py-2 md:py-0 lg:!leading-snug font-medium racking-[-0.0125em] mt-6 font-heading text-center tracking-[-0.02em] drop-shadow-sm">
           <span>
-            Your ultimate social media
+            Build something different
             <br className="hidden md:block" />
           </span>
-          <span> marketing tool</span>
+          <span> with Montara Project</span>
         </h1>
         <p className="text-sm sm:text-base lg:text-lg mt-4 text-accent-foreground/60 max-w-2xl mx-auto">
-          Elevate your social media presense with AI-powered content creation and scheduling.{' '}
+          We design and build reliable web products end to end — backend, frontend, and DevOps.{' '}
           <span className="hidden sm:inline">
-            Luro is the all-in-one solution for your social media marketing needs.
+            From idea to production, we ship software that scales.
           </span>
         </p>
         <div className="flex items-center justify-center md:gap-x-6 mt-8">
           <Link
-            href="/app"
+            href={`mailto:${site.email}`}
             className="inline-flex items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none bg-primary text-primary-foreground hover:opacity-70 bt-primary h-10 px-8"
           >
-            Start for free
+            Start a project
           </Link>
           <Link
-            href="#"
+            href="/projects"
             className="items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-8 hidden md:flex"
           >
-            How it works
+            View our work
           </Link>
         </div>
         <div className="relative mx-auto max-w-7xl rounded-xl lg:rounded-[32px] border border-neutral-200/50 p-2 backdrop-blur-lg border-neutral-700 bg-neutral-800/50 md:p-4 mt-12">

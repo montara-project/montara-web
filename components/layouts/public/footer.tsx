@@ -1,46 +1,9 @@
+import type { ReactNode } from 'react'
+
 import Link from 'next/link'
 
 import { LogoIcon } from '@/components/common/svg'
-
-const columns = [
-  {
-    title: 'Product',
-    links: [
-      { label: 'Home', href: '/' },
-      { label: 'Features', href: '/' },
-      { label: 'Pricing', href: '/' },
-      { label: 'Contact', href: '/' },
-      { label: 'Download', href: '/' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Blog', href: '/blog' },
-      { label: 'Help Center', href: '/help-center' },
-      { label: 'Community', href: '/community' },
-      { label: 'Guides', href: '/guides' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
-      { label: 'Cookies', href: '/cookies' },
-    ],
-  },
-  {
-    title: 'Developers',
-    links: [
-      { label: 'API Docs', href: '/api-docs' },
-      { label: 'SDKs', href: '/sdks' },
-      { label: 'Tools', href: '/tools' },
-      { label: 'Open Source', href: '/open-source' },
-      { label: 'Changelog', href: '/changelog' },
-    ],
-  },
-]
+import { footerColumns, site } from '@/data/site'
 
 function InstagramIcon() {
   return (
@@ -76,7 +39,7 @@ function XIcon() {
   )
 }
 
-function DiscordIcon() {
+function GitHubIcon() {
   return (
     <svg
       className="w-5 h-5 text-muted-foreground hover:text-secondary-foreground"
@@ -85,15 +48,36 @@ function DiscordIcon() {
       height="1em"
       viewBox="0 0 24 24"
     >
-      <g fill="none" fillRule="evenodd">
-        <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-        <path
-          fill="currentColor"
-          d="M15.003 4c.744 0 1.53.26 2.25.547l.527.216c1.26.528 1.968 1.636 2.517 2.853c.891 1.975 1.51 4.608 1.724 6.61c.102.95.127 1.906-.056 2.549c-.197.687-.867 1.173-1.518 1.555l-.322.183l-.334.186q-.26.144-.525.284l-.522.27l-.717.357l-.577.284a1 1 0 1 1-.894-1.788l.79-.39l-.58-.609c-1.39.57-3.027.893-4.766.893s-3.376-.322-4.766-.893l-.58.608l.793.39a1 1 0 1 1-.894 1.79l-.544-.27c-.402-.2-.805-.398-1.203-.607l-.928-.505l-.321-.183c-.651-.382-1.322-.868-1.518-1.555c-.184-.643-.158-1.598-.057-2.55c.214-2.001.833-4.634 1.724-6.609c.549-1.217 1.257-2.325 2.517-2.853C7.059 4.413 8.072 4 9 4c.603 0 1.077.555.99 1.147A14 14 0 0 1 12 5c.691 0 1.366.05 2.014.148A1.012 1.012 0 0 1 15.004 4ZM8.75 10.5a1.75 1.75 0 1 0 0 3.5a1.75 1.75 0 0 0 0-3.5m6.5 0a1.75 1.75 0 1 0 0 3.5a1.75 1.75 0 0 0 0-3.5"
-        />
-      </g>
+      <path
+        fill="currentColor"
+        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5"
+      />
     </svg>
   )
+}
+
+function LinkedInIcon() {
+  return (
+    <svg
+      className="w-5 h-5 text-muted-foreground hover:text-secondary-foreground"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0"
+      />
+    </svg>
+  )
+}
+
+const socialIcons: Record<string, ReactNode> = {
+  GitHub: <GitHubIcon />,
+  LinkedIn: <LinkedInIcon />,
+  X: <XIcon />,
+  Instagram: <InstagramIcon />,
 }
 
 export function SiteFooter() {
@@ -107,15 +91,20 @@ export function SiteFooter() {
           <div className="flex flex-col items-start max-w-48">
             <div className="flex items-center gap-2">
               <LogoIcon />
-              <span className="text-xl font-medium">Luro</span>
+              <span className="text-xl font-medium">{site.name}</span>
             </div>
-            <p className="text-base max-w mt-4">Empower your business with our AI tools.</p>
-            <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none bg-primary text-primary-foreground hover:opacity-70 bt-primary h-9 px-4 py-2 mt-8">
-              <Link href="/app">Start for free</Link>
-            </button>
+            <p className="text-base max-w mt-4">
+              {site.tagline}. We build backend, frontend, and DevOps solutions.
+            </p>
+            <Link
+              href={`mailto:${site.email}`}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none bg-primary text-primary-foreground hover:opacity-70 bt-primary h-9 px-4 py-2 mt-8"
+            >
+              Start a project
+            </Link>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-lg mt-10 md:mt-0">
-            {columns.map((col) => (
+          <div className="grid grid-cols-2 gap-8 w-full max-w-lg mt-10 md:mt-0">
+            {footerColumns.map((col) => (
               <div key={col.title} className="flex flex-col gap-4">
                 <h4 className="text-sm font-medium">{col.title}</h4>
                 <ul className="space-y-4 w-full">
@@ -137,17 +126,15 @@ export function SiteFooter() {
       </div>
       <div className="w-full h-full">
         <div className="size-full mx-auto max-w-6xl px-4 md:px-12 pt-10 flex items-center justify-between relative">
-          <p className="text-sm text-secondary-foreground">© 2024 Luro. All rights reserved.</p>
+          <p className="text-sm text-secondary-foreground">
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
+          </p>
           <div className="flex items-center gap-4">
-            <a className="p-1" href="#">
-              <InstagramIcon />
-            </a>
-            <a className="p-1" href="#">
-              <XIcon />
-            </a>
-            <a className="p-1" href="#">
-              <DiscordIcon />
-            </a>
+            {site.socials.map((social) => (
+              <a key={social.label} className="p-1" href={social.href} aria-label={social.label}>
+                {socialIcons[social.label]}
+              </a>
+            ))}
           </div>
         </div>
       </div>

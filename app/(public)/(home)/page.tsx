@@ -1,22 +1,18 @@
 import { CtaSection } from '@/components/block/home/cta-section'
-import { FeaturesSection } from '@/components/block/home/features-section'
 import { HeroSection } from '@/components/block/home/hero-section'
-import { IntegrationsSection } from '@/components/block/home/integration-section'
-import { LogoMarquee } from '@/components/block/home/logo-marquee'
-import { PerksSection } from '@/components/block/home/perk-section'
-import { PricingSection } from '@/components/block/home/pricing-section'
-import { TestimonialsSection } from '@/components/block/home/testimonial-section'
+import { ProcessSection } from '@/components/block/home/process-section'
+import { ProjectsSection } from '@/components/block/home/projects-section'
+import { ServicesSection } from '@/components/block/home/services-section'
+import { TechStackSection } from '@/components/block/home/tech-stack-section'
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <LogoMarquee />
-      <IntegrationsSection />
-      <FeaturesSection />
-      <PerksSection />
-      <PricingSection />
-      <TestimonialsSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <TechStackSection />
+      <ProcessSection />
       <CtaSection />
     </>
   )

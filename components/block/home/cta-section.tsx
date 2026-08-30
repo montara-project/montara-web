@@ -1,3 +1,7 @@
+import Link from 'next/link'
+
+import { site } from '@/data/site'
+
 export function CtaSection() {
   return (
     <div className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full relative">
@@ -5,25 +9,25 @@ export function CtaSection() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-12 bg-violet-500 blur-[10rem]" />
         <div className="flex flex-col items-center justify-center w-full z-20">
           <h2 className="text-4xl md:text-6xl font-heading heading font-semibold !leading-tight mt-6">
-            Elevate your <br className="hidden md:block" /> experience with us
+            Let&apos;s build <br className="hidden md:block" /> something different
           </h2>
           <p className="text-base md:text-lg text-center text-accent-foreground/80 max-w-xl mx-auto mt-6">
-            Ready to get started? Sign up now and start your journey with us. We are here to help
-            you grow.
+            Have a project in mind? Tell us about it and we&apos;ll get back to you with how we can
+            help.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 mt-6">
-            <a
-              href=""
+            <Link
+              href={`mailto:${site.email}`}
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none bg-primary text-primary-foreground hover:opacity-70 bt-primary h-10 px-8 w-full md:w-max"
             >
-              Get Started
-            </a>
-            <a
-              href=""
+              Start a project
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md shadow-none text-sm font-medium ring-offset-background transition transform-gpu ease-in-out duration-300 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 active:scale-95 group select-none text-primary bg-primary/10 hover:bg-primary/30 h-10 px-8 w-full md:w-max"
             >
-              Learn More
-            </a>
+              Contact us
+            </Link>
           </div>
         </div>
         <div
