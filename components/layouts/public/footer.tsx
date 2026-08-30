@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
-import { LogoIcon } from '@/components/common/svg'
 import { footerColumns, site } from '@/data/site'
 
 function InstagramIcon() {
@@ -90,7 +90,13 @@ export function SiteFooter() {
           </div>
           <div className="flex flex-col items-start max-w-48">
             <div className="flex items-center gap-2">
-              <LogoIcon />
+              <Image
+                src="/assets/images/brand-logo.png"
+                alt="Montara Project"
+                width={32}
+                height={32}
+                className="rounded-xl"
+              />
               <span className="text-xl font-medium">{site.name}</span>
             </div>
             <p className="text-base max-w mt-4">

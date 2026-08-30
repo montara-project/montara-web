@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const META_URL = 'https://montaraproject.com'
 export const META_TITLE = `Montara Project - Build Something Different`
 export const META_DESCRIPTION = `Montara Project builds something different. We handle full-stack web development including backend, frontend, and DevOps, with game development coming soon.`
-export const META_IMAGE = '/static/images/logo-fill.png'
+export const META_IMAGE = '/assets/images/brand-logo.png'
 export const META_KEYWORDS = `montara project, web development, backend development, frontend development, devops, full-stack development, game development`
 
 const SITE_NAME = 'Montara Project'
@@ -37,12 +37,12 @@ export const META: Metadata = {
     images: [META_IMAGE],
   },
   icons: {
-    icon: '/favicon/favicon.ico',
-    apple: '/favicon/apple-touch-icon.png',
-    shortcut: '/favicon/favicon.ico',
+    icon: '/assets/favicon/favicon.ico',
+    apple: '/assets/favicon/apple-touch-icon.png',
+    shortcut: '/assets/favicon/favicon.ico',
     other: {
       rel: 'shortcut icon',
-      url: '/favicon/favicon.ico',
+      url: '/assets/favicon/favicon.ico',
     },
   },
 } as const

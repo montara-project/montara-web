@@ -1,10 +1,10 @@
 'use client'
 
 import { ArrowRight, Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { LogoIcon } from '@/components/common/svg'
 import { navLinks, site } from '@/data/site'
 
 export function SiteHeader() {
@@ -16,7 +16,13 @@ export function SiteHeader() {
         <div className="flex items-center justify-between w-full sticky mt-[7px] lg:mt-auto mb-auto inset-x-0">
           <div className="flex items-center flex-1 lg:flex-none pl-1">
             <Link href="/" className="text-lg font-semibold text-foreground">
-              <LogoIcon />
+              <Image
+                src="/assets/images/brand-logo.png"
+                alt="Montara Project"
+                width={32}
+                height={32}
+                className="rounded-xl"
+              />
             </Link>
             <div className="items-center hidden ml-4 lg:flex">
               <nav
