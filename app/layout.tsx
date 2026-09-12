@@ -2,18 +2,23 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
-import { Google_Sans } from 'next/font/google'
+import { Outfit, Work_Sans } from 'next/font/google'
 
 import { META } from '@/lib/constants/meta'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = META
 
-const googleSans = Google_Sans({
-  variable: '--font-google-sans',
+const outfit = Outfit({
+  variable: '--font-outfit',
   subsets: ['latin'],
-  weight: '400',
-  preload: true,
+  display: 'swap',
+})
+
+const workSans = Work_Sans({
+  variable: '--font-work-sans',
+  subsets: ['latin'],
+  display: 'swap',
 })
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -26,7 +31,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           data-website-id="9ff12a9b-5fdf-4755-9cfa-ac4f10063f96"
         ></script>
       </head>
-      <body className={cn(googleSans.className, 'antialiased')}>{children}</body>
+      <body className={cn(outfit.variable, workSans.variable, 'font-sans antialiased')}>
+        {children}
+      </body>
     </html>
   )
 }

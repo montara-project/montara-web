@@ -1,26 +1,18 @@
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
+import { SectionTitle } from '@/components/common/section'
 import { services } from '@/data/site'
 
 export function ServicesSection() {
   return (
-    <div className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24 w-full">
-      <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-        <div className="px-4 py-1 rounded-full bg-primary/20 cursor-pointer select-none">
-          <div className="bg-[linear-gradient(110deg,#6d28d9,45%,#c4b5fd,55%,#6d28d9)] bg-[length:250%_100%] bg-clip-text animate-background-shine text-transparent font-medium text-sm">
-            Services
-          </div>
-        </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6">
-          What we do
-        </h2>
-        <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
-          We handle project-based work across the full stack — from APIs and interfaces to the
-          infrastructure that runs them.
-        </p>
-      </div>
-      <div className="mt-16 w-full">
+    <div className="flex flex-col items-center justify-center py-16 md:py-20 lg:py-28 w-full">
+      <SectionTitle
+        tag="Services"
+        title="What we do"
+        description="We handle project-based work across the full stack — from APIs and interfaces to the infrastructure that runs them."
+      />
+      <div className="mt-12 md:mt-16 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
           {services.map((service) => {
             const Icon = service.icon
@@ -28,20 +20,21 @@ export function ServicesSection() {
               <Link
                 key={service.slug}
                 href={`/services#${service.slug}`}
-                className="group relative flex flex-col rounded-2xl border border-border/60 p-6 transition-colors hover:border-primary/60"
+                className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-brand hover:shadow-[0_12px_32px_rgba(20,33,61,0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
               >
-                <div className="mb-4">
-                  <Icon
-                    className="w-8 h-8 text-muted-foreground transition-colors group-hover:text-foreground"
-                    strokeWidth={1.5}
-                  />
+                <div className="mb-5 inline-flex size-11 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors duration-200 group-hover:bg-brand group-hover:text-black">
+                  <Icon className="w-5.5 h-5.5" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-lg font-heading font-medium">{service.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{service.tagline}</p>
-                <p className="text-sm text-muted-foreground mt-3">{service.description}</p>
-                <span className="inline-flex items-center gap-1 text-sm mt-4 text-foreground/70 group-hover:text-foreground">
+                <h3 className="text-lg font-heading font-semibold text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-primary/70 mt-1 font-medium">{service.tagline}</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm mt-5 font-medium text-primary group-hover:text-brand transition-colors duration-200">
                   {service.comingSoon ? 'Coming soon' : 'Learn more'}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </span>
               </Link>
             )
