@@ -11,13 +11,14 @@ interface SectionTitleProps {
 export function SectionTitle({ title, tag, description }: SectionTitleProps) {
   return (
     <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-      <div className="px-4 py-1 rounded-full bg-primary/20 cursor-pointer select-none">
-        <div className="bg-[linear-gradient(110deg,#6d28d9,45%,#c4b5fd,55%,#6d28d9)] bg-[length:250%_100%] bg-clip-text animate-background-shine text-transparent font-medium text-sm">
-          {tag}
-        </div>
-      </div>
-      <h1 className="text-3xl md:text-5xl font-heading font-medium leading-snug! mt-6">{title}</h1>
-      <p className="text-base md:text-lg text-center text-accent-foreground/80 mt-6">
+      <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-semibold tracking-[0.14em] uppercase text-primary select-none">
+        <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" />
+        {tag}
+      </span>
+      <h1 className="text-3xl md:text-5xl font-heading font-semibold leading-snug! tracking-tight mt-6 text-foreground">
+        {title}
+      </h1>
+      <p className="text-base md:text-lg text-center text-muted-foreground mt-6 max-w-xl">
         {description}
       </p>
     </div>
