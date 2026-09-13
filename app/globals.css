@@ -100,6 +100,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* full-bleed hero uses 100vw; clip any sub-pixel/scrollbar overflow */
+    overflow-x: clip;
   }
   ::selection {
     background-color: hsl(39 98% 53% / 0.85);

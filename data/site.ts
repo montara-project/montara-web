@@ -9,7 +9,7 @@ export const site = {
     'Montara Project is a software company that handles project-based work across backend, frontend, and DevOps — with game development on the horizon.',
   email: 'hello@montaraproject.com',
   socials: [
-    { label: 'GitHub', href: 'https://github.com' },
+    { label: 'GitHub', href: 'https://github.com/montara-project' },
     { label: 'LinkedIn', href: 'https://linkedin.com' },
     { label: 'X', href: 'https://x.com' },
     { label: 'Instagram', href: 'https://instagram.com' },
@@ -197,6 +197,12 @@ export const team: TeamMember[] = [
     role: 'Founder & Engineer',
     bio: 'Full-stack engineer focused on building reliable, scalable products end to end.',
     photo: '/assets/images/teams/fajri.jpeg',
+  },
+  {
+    name: 'Mahdy Arief',
+    role: 'AI Consultant',
+    bio: 'AI consultant specializing in machine learning, LLMs, and intelligent system design.',
+    photo: '/assets/images/teams/mahdy.jpg',
   },
 ]
 
