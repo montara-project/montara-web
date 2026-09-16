@@ -13,10 +13,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "types": ["./worker-configuration.d.ts", "node", "vinext/types"],
     "paths": {
       "@/*": ["./*"]
-    },
-    "types": ["./worker-configuration.d.ts", "node"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

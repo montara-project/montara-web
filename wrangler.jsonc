@@ -5,7 +5,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "montara-web", // Change this to your project name
-  "compatibility_date": "2026-08-17",
+  "compatibility_date": "2026-09-15",
   "main": "vinext/server/fetch-handler",
   "assets": {
     "directory": "dist/client",
@@ -28,6 +28,11 @@
     {
       "pattern": "montaraproject.com",
       "zone_name": "montaraproject.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "montara.cc.cd",
+      "zone_name": "montara.cc.cd",
       "custom_domain": true,
     },
   ],
