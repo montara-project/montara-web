@@ -30,6 +30,11 @@
       "zone_name": "montaraproject.com",
       "custom_domain": true,
     },
+    {
+      "pattern": "montara.cc.cd",
+      "zone_name": "montara.cc.cd",
+      "custom_domain": true,
+    },
   ],
 
   /**
