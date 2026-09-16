@@ -12,7 +12,16 @@
         "type": "natural",
         "order": "asc"
       }
-    ]
+    ],
+    // JSX A11y
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/heading-has-content": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/role-has-required-aria-props": "off",
+    "jsx-a11y/no-autofocus": "off",
+    // React
+    "react/no-children-prop": "off"
   },
   "env": {
     "builtin": true
@@ -20,6 +29,7 @@
   "ignorePatterns": [
     "next-env.d.ts",
     "tsconfig.tsbuildinfo",
+    "node_modules",
     ".next",
     "dist",
     ".wrangler",
