@@ -31,7 +31,10 @@ export default function LegalPage({ title, description, sections, related }: Leg
         </div>
 
         <div className="mt-10 grid items-start gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
-          <nav aria-label="On this page" className="rounded-xl border border-border bg-card p-5">
+          <nav
+            aria-label="On this page"
+            className="rounded-xl border border-border bg-card p-5 lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto lg:overscroll-contain"
+          >
             <p className="mb-3 text-sm font-semibold text-foreground">On this page</p>
             <ol className="space-y-1">
               {sections.map((section, index) => (
