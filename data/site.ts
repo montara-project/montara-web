@@ -220,6 +220,8 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Projects', href: '/projects' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
+      { label: 'Terms of Use', href: '/terms' },
+      { label: 'Privacy Policy', href: '/privacy' },
     ],
   },
   {

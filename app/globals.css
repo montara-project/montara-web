@@ -96,7 +96,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply scroll-smooth font-sans;
+    @apply scroll-smooth motion-reduce:scroll-auto font-sans;
   }
   body {
     @apply bg-background text-foreground;
