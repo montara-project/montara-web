@@ -8,12 +8,7 @@ export const site = {
   description:
     'Montara Project is a software company that handles project-based work across backend, frontend, and DevOps — with game development on the horizon.',
   email: 'hello@montaraproject.com',
-  socials: [
-    { label: 'GitHub', href: 'https://github.com/montara-project' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'X', href: 'https://x.com' },
-    { label: 'Instagram', href: 'https://instagram.com' },
-  ],
+  socials: [{ label: 'GitHub', href: 'https://github.com/montara-project' }],
 }
 
 export interface NavLink {

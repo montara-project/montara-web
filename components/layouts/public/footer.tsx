@@ -5,40 +5,6 @@ import Link from 'next/link'
 
 import { footerColumns, site } from '@/data/site'
 
-function InstagramIcon() {
-  return (
-    <svg
-      className="w-5 h-5"
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fill="currentColor"
-        d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a79 79 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.9 4.9 0 0 1-1.153 1.772a4.9 4.9 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465l-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78 78 0 0 1-2.189-.023l-.194-.006a63 63 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.9 4.9 0 0 1-1.771-1.153a4.9 4.9 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428l-.03-.712l-.005-.194A79 79 0 0 1 2 13.028v-2.056a79 79 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.9 4.9 0 0 1 3.68 3.678a4.9 4.9 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"
-      />
-    </svg>
-  )
-}
-
-function XIcon() {
-  return (
-    <svg
-      className="w-5 h-5"
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fill="currentColor"
-        d="M22 5.8a8.5 8.5 0 0 1-2.36.64a4.13 4.13 0 0 0 1.81-2.27a8.2 8.2 0 0 1-2.61 1a4.1 4.1 0 0 0-7 3.74a11.64 11.64 0 0 1-8.45-4.29a4.16 4.16 0 0 0-.55 2.07a4.09 4.09 0 0 0 1.82 3.41a4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4a4 4 0 0 1-1.1.17a5 5 0 0 1-.77-.07a4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 3 18.34a8 8 0 0 1-1-.06a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 20 8.45v-.53a8.4 8.4 0 0 0 2-2.12"
-      />
-    </svg>
-  )
-}
-
 function GitHubIcon() {
   return (
     <svg
@@ -76,13 +42,15 @@ function LinkedInIcon() {
 const socialIcons: Record<string, ReactNode> = {
   GitHub: <GitHubIcon />,
   LinkedIn: <LinkedInIcon />,
-  X: <XIcon />,
-  Instagram: <InstagramIcon />,
 }
 
 export function SiteFooter() {
   return (
-    <footer className="w-full bg-black text-white relative mt-16 md:mt-24">
+    <footer className="w-full bg-navy-deep text-white relative mt-16 md:mt-24">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent"
+      />
       <div className="size-full mx-auto max-w-7xl px-4 md:px-12 py-14 md:py-20 flex flex-col md:flex-row justify-between gap-12">
         <div className="flex flex-col items-start max-w-72">
           <div className="flex items-center gap-2">
@@ -100,7 +68,7 @@ export function SiteFooter() {
           </p>
           <Link
             href={`mailto:${site.email}`}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-brand text-black hover:bg-brand/85 h-9 px-4 py-2 mt-8"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-brand text-black hover:bg-brand/85 h-9 px-4 py-2 mt-8"
           >
             Start a project
           </Link>
@@ -136,6 +104,8 @@ export function SiteFooter() {
                 key={social.label}
                 className="p-1 text-white/55 hover:text-brand transition-colors"
                 href={social.href}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={social.label}
               >
                 {socialIcons[social.label]}
