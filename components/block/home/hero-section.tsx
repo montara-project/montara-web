@@ -1,15 +1,12 @@
-import { ArrowRight, Star } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 import { asset, site } from '@/data/site'
 
-const heroAvatars = [
-  '/assets/images/avatars/men-1.jpg',
-  '/assets/images/avatars/women-2.jpg',
-  '/assets/images/avatars/men-5.jpg',
-  '/assets/images/avatars/women-6.jpg',
-  '/assets/images/avatars/men-9.jpg',
+const heroStats = [
+  { value: '12+', label: 'Projects shipped' },
+  { value: '4', label: 'Industries served' },
+  { value: '48h', label: 'Avg. response time' },
 ]
 
 export function HeroSection() {
@@ -47,7 +44,7 @@ export function HeroSection() {
           </span>
         </span>
 
-        <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-foreground mt-7 leading-[1.08]">
+        <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-foreground mt-7 leading-[1.06] text-balance">
           Build something{' '}
           <span className="relative inline-block whitespace-nowrap">
             <span
@@ -55,11 +52,11 @@ export function HeroSection() {
               className="absolute inset-x-[-0.08em] bottom-[0.06em] h-[0.3em] -rotate-1 rounded-full bg-brand/40"
             />
             <span className="relative">different</span>
-          </span>
-          <br className="hidden md:block" /> with Montara Project
+          </span>{' '}
+          with Montara Project
         </h1>
 
-        <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed">
+        <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto mt-6 leading-relaxed text-pretty">
           We design and build reliable web products end to end — backend, frontend, and DevOps. From
           idea to production, we ship software that scales.
         </p>
@@ -80,30 +77,16 @@ export function HeroSection() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4 mt-10" aria-hidden="true">
-          <div className="flex -space-x-2.5">
-            {heroAvatars.map((src) => (
-              <Image
-                key={src}
-                src={src}
-                alt=""
-                width={36}
-                height={36}
-                className="size-9 rounded-full border-2 border-white object-cover shadow-sm"
-              />
-            ))}
-          </div>
-          <div className="text-start">
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-3.5 fill-brand text-brand" />
-              ))}
+        <dl className="flex flex-wrap items-start justify-center gap-x-8 gap-y-6 sm:gap-x-12 mt-12">
+          {heroStats.map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center">
+              <dd className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-foreground tabular-nums">
+                {stat.value}
+              </dd>
+              <dt className="text-xs text-muted-foreground mt-1.5">{stat.label}</dt>
             </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              Shipped products across fintech, edtech &amp; Web3
-            </p>
-          </div>
-        </div>
+          ))}
+        </dl>
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl mt-14 md:mt-16">

@@ -43,23 +43,23 @@
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 0 0% 9%;
+  --foreground: 217 40% 10%;
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 9%;
+  --card-foreground: 217 40% 10%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 9%;
+  --popover-foreground: 217 40% 10%;
   --primary: 217 52% 16%;
   --primary-foreground: 0 0% 100%;
   --secondary: 217 45% 94%;
   --secondary-foreground: 217 52% 16%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 38%;
-  --accent: 0 0% 94%;
+  --muted: 220 20% 96%;
+  --muted-foreground: 220 9% 40%;
+  --accent: 220 20% 95%;
   --accent-foreground: 217 52% 16%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
+  --border: 220 14% 90%;
+  --input: 220 14% 88%;
   --ring: 39 98% 53%;
   --chart-1: 217 52% 16%;
   --chart-2: 39 98% 53%;
@@ -103,6 +103,11 @@
     /* full-bleed hero uses 100vw; clip any sub-pixel/scrollbar overflow */
     overflow-x: clip;
   }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
   ::selection {
     background-color: hsl(39 98% 53% / 0.85);
     color: black;
@@ -111,9 +116,32 @@
 
 /* Light heading gradient, used on dark navy panels */
 .heading {
-  background-image: linear-gradient(to bottom, hsl(0 0% 100%), hsl(0 0% 100% / 0.65));
+  background-image: linear-gradient(to bottom, hsl(0 0% 100%), hsl(0 0% 100% / 0.82));
   background-clip: text;
   color: transparent;
+}
+
+/* Scroll-linked reveal: elements fade up as they enter the viewport.
+   Progressive enhancement — browsers without view() timelines show content as-is. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Navy/amber conic glow behind the hero screenshot */

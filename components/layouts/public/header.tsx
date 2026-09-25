@@ -3,12 +3,18 @@
 import { ArrowRight, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { navLinks, site } from '@/data/site'
+import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
 
   return (
     <header className="fixed top-4 inset-x-0 mx-auto max-w-7xl px-2 md:px-12 z-[100] h-12">
@@ -37,9 +43,19 @@ export function SiteHeader() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="h-10 px-4 py-2 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground hover:bg-black/5 w-max"
+                        aria-current={isActive(link.href) ? 'page' : undefined}
+                        className={cn(
+                          'relative h-10 px-4 py-2 text-sm font-medium rounded-md w-max transition-colors duration-200 hover:text-foreground hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60',
+                          isActive(link.href) ? 'text-foreground' : 'text-muted-foreground'
+                        )}
                       >
                         {link.label}
+                        {isActive(link.href) && (
+                          <span
+                            aria-hidden="true"
+                            className="absolute inset-x-4 -bottom-px h-0.5 rounded-full bg-brand"
+                          />
+                        )}
                       </Link>
                     </li>
                   ))}
@@ -73,7 +89,10 @@ export function SiteHeader() {
                 {navLinks.map((link) => (
                   <li
                     key={link.label}
-                    className="w-full px-4 py-2 text-lg font-medium transition rounded-md cursor-pointer text-foreground text-start active:scale-95 hover:bg-black/5"
+                    className={cn(
+                      'w-full px-4 py-2 text-lg font-medium transition rounded-md cursor-pointer text-start active:scale-95 hover:bg-black/5',
+                      isActive(link.href) ? 'text-foreground' : 'text-muted-foreground'
+                    )}
                   >
                     <Link href={link.href} className="flex items-center w-full text-start">
                       {link.label}
