@@ -99,7 +99,7 @@ export const services: Service[] = [
 
 export interface Project {
   title: string
-  category: 'Backend' | 'Frontend' | 'DevOps'
+  category: 'Backend' | 'Frontend' | 'DevOps' | 'Full-Stack'
   description: string
   techStack: string[]
   link?: string
@@ -107,28 +107,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'House of Wizard',
+    title: 'Cloudrive',
+    category: 'Full-Stack',
+    description:
+      'A unified cloud drive that brings Google Drive, Dropbox, OneDrive, S3, and more into one searchable workspace with live two-way sync, zero-copy indexing, and a single permissions model.',
+    techStack: ['Vinext', 'React', 'Tailwind CSS', 'Go', 'PostgreSQL'],
+    link: 'https://cloudrive.us.ci',
+  },
+  {
+    title: 'Overlay Browser Source',
     category: 'Frontend',
     description:
+      'A free, no-account OBS & Streamlabs browser source that displays animated donation QR codes (Tako, Saweria, Trakteer, Ko-fi, and more) with rotating or grid layouts, custom transitions, and transparent backgrounds.',
+    techStack: ['Tanstack Start', 'React', 'Tailwind CSS', 'OBS'],
+    link: 'https://overlay-browser-source.vercel.app',
+  },
+  {
+    title: 'House of Wizard',
+    category: 'Full-Stack',
+    description:
       'An education platform for aspiring Web3 data analysts, teaching blockchain analytics, on-chain data analysis, and Web3 insights.',
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Web3'],
+    techStack: ['Vinext', 'React', 'Tailwind CSS', 'Honojs', 'Web3'],
     link: 'https://house-of-wizard.xyz',
   },
   {
     title: 'Moneyflow ID',
-    category: 'Frontend',
+    category: 'Full-Stack',
     description:
       'A cashflow management web app that helps users track income, categorize expenses, create budgets, and scan receipts to stay in control of their finances.',
-    techStack: ['React', 'Vite', 'Tailwind CSS'],
+    techStack: ['React', 'Vinext', 'Tailwind CSS', 'Go', 'PostgreSQL'],
     link: 'https://moneyflow.id',
-  },
-  {
-    title: 'Audiopintar',
-    category: 'Frontend',
-    description:
-      'An AI-powered audio platform for audiobooks and podcasts with AI summaries, chat, and smart insights to transform how users learn.',
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'AI'],
-    link: 'https://audiopintar-nu.vercel.app/',
   },
   {
     title: 'masb0ymas.com',
@@ -195,8 +203,8 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Mahdy Arief',
-    role: 'AI Consultant',
-    bio: 'AI consultant specializing in machine learning, LLMs, and intelligent system design.',
+    role: 'PM & AI Consultant',
+    bio: 'Project Manager and AI consultant specializing in machine learning, LLMs, and intelligent system design.',
     photo: '/assets/images/teams/mahdy.jpg',
   },
 ]
