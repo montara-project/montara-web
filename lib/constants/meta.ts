@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 
 export const META_URL = 'https://montaraproject.com'
 export const META_TITLE = `Montara Project - Build Something Different`
-export const META_DESCRIPTION = `Montara Project builds something different. We handle full-stack web development including backend, frontend, and DevOps, with game development coming soon.`
+export const META_DESCRIPTION = `Montara Project builds something different. We handle full-stack web development including backend, frontend, and DevOps, plus cross-platform desktop apps built with Tauri.`
 export const META_IMAGE = '/assets/images/brand-logo.png'
-export const META_KEYWORDS = `montara project, web development, backend development, frontend development, devops, full-stack development, game development`
+export const META_KEYWORDS = `montara project, web development, backend development, frontend development, devops, full-stack development, desktop development, tauri`
 
 const SITE_NAME = 'Montara Project'
 
