@@ -98,14 +98,14 @@ export function HeroSection() {
           <div className="rounded-lg lg:rounded-xl border border-white/10 bg-black overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              alt="Product dashboard built by Montara Project"
+              alt="Tera Router AI dashboard built by Montara Project"
               loading="lazy"
-              width={1920}
-              height={1080}
+              width={1879}
+              height={984}
               decoding="async"
               className="rounded-lg lg:rounded-xl w-full h-auto"
               style={{ color: 'transparent' }}
-              src={asset('/images/dashboard.png')}
+              src={asset('/images/terarouter.png')}
             />
           </div>
         </div>
