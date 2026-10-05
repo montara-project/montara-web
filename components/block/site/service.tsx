@@ -10,7 +10,7 @@ export default function ServiceSection() {
     <Section
       tag="Services"
       title="What we do"
-      description="We handle project-based work across backend, frontend, and DevOps — with game development on the horizon."
+      description="We handle project-based work across backend, frontend, and DevOps — plus cross-platform desktop apps built with Tauri."
     >
       <div className="mt-16 flex flex-col gap-8 max-w-4xl mx-auto">
         {services.map((service) => {

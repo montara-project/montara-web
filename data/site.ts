@@ -1,4 +1,4 @@
-import { Cloud, Code2, Gamepad2, Server, type LucideIcon } from 'lucide-react'
+import { AppWindow, Cloud, Code2, Server, type LucideIcon } from 'lucide-react'
 
 export const asset = (path: string) => `/assets/${path}`
 
@@ -6,7 +6,7 @@ export const site = {
   name: 'Montara Project',
   tagline: 'Build something different',
   description:
-    'Montara Project is a software company that handles project-based work across backend, frontend, and DevOps — with game development on the horizon.',
+    'Montara Project is a software company that handles project-based work across backend, frontend, and DevOps — plus cross-platform desktop apps built with Tauri.',
   email: 'hello@montaraproject.com',
   socials: [{ label: 'GitHub', href: 'https://github.com/montara-project' }],
 }
@@ -85,27 +85,40 @@ export const services: Service[] = [
     technologies: ['Docker', 'Kubernetes', 'AWS', 'Cloudflare', 'Terraform', 'GitHub Actions'],
   },
   {
-    slug: 'game-dev',
-    title: 'Game Development',
-    tagline: 'Coming soon',
+    slug: 'desktop-dev',
+    title: 'Desktop Development',
+    tagline: 'Cross-platform desktop apps',
     description:
-      'We are expanding into game development. Stay tuned as we bring the same engineering rigor to interactive experiences.',
-    icon: Gamepad2,
-    deliverables: [],
-    technologies: [],
-    comingSoon: true,
+      'We build fast, lightweight desktop applications with Tauri — native performance and tiny binaries, powered by the web technologies your team already knows.',
+    icon: AppWindow,
+    deliverables: [
+      'Cross-platform apps for macOS, Windows, & Linux',
+      'Tauri app architecture & development',
+      'Native system integrations (tray, notifications, filesystem)',
+      'Installer packaging & auto-updates',
+      'Electron to Tauri migration',
+    ],
+    technologies: ['Tauri', 'Rust', 'TypeScript', 'React', 'Vite'],
   },
 ]
 
 export interface Project {
   title: string
-  category: 'Backend' | 'Frontend' | 'DevOps' | 'Full-Stack'
+  category: 'Backend' | 'Frontend' | 'DevOps' | 'Full-Stack' | 'Desktop'
   description: string
   techStack: string[]
   link?: string
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Veil App',
+    category: 'Desktop',
+    description:
+      'A lightweight macOS menu bar app that keeps your menu bar tidy — hide any icon with one click, monitor live memory usage, and activate, quit, or force-quit apps from a single popover. Ships as a universal binary for Intel and Apple Silicon with auto-update.',
+    techStack: ['Tauri 2', 'Rust', 'TypeScript', 'Vite', 'Bun'],
+    link: 'https://github.com/montara-project/veilapp',
+  },
   {
     title: 'Cloudrive',
     category: 'Full-Stack',
@@ -233,7 +246,7 @@ export const footerColumns: FooterColumn[] = [
       { label: 'Backend Development', href: '/services#backend' },
       { label: 'Frontend Development', href: '/services#frontend' },
       { label: 'DevOps & Cloud', href: '/services#devops' },
-      { label: 'Game Development', href: '/services#game-dev' },
+      { label: 'Desktop Development', href: '/services#desktop-dev' },
     ],
   },
 ]
