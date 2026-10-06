@@ -8,13 +8,13 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          These draft Terms of Use describe the proposed conditions for using the {site.name}{' '}
-          website. The website introduces our software development services, showcases selected
-          projects, and provides ways to contact us.
+          These Terms of Use describe the conditions for using the {site.name} website. The website
+          introduces our software development services, showcases selected projects, and provides
+          ways to contact us.
         </p>
         <p>
-          These terms concern this website only. They do not replace a signed proposal, statement of
-          work, or other agreement for services.
+          They concern this website only. They do not replace a signed proposal, statement of work,
+          or other agreement for services.
         </p>
       </>
     ),
@@ -98,7 +98,7 @@ const sections: LegalSection[] = [
         </p>
         <p>
           The website is provided on an “as available” basis. Continuous availability, accuracy, and
-          freedom from interruptions are not guaranteed. Nothing in these draft terms is intended to
+          freedom from interruptions are not guaranteed. Nothing in these terms is intended to
           exclude rights or responsibilities that cannot be excluded under applicable law.
         </p>
       </>
@@ -109,9 +109,10 @@ const sections: LegalSection[] = [
     title: 'Changes to these terms',
     content: (
       <p>
-        These draft terms may be revised before publication. A finalized version should identify its
-        effective date, and later revisions should be dated on this page. Review the current version
-        when you use the website and contact us if you have questions.
+        We may revise these terms from time to time. Revisions are dated on this page, and the
+        effective date shown at the top identifies the current version. This version is effective as
+        of October 6, 2026. Review the current version when you use the website and contact us if
+        you have questions.
       </p>
     ),
   },
@@ -122,6 +123,7 @@ export default function TermsSection() {
     <LegalPage
       title="Terms of Use"
       description="A clear guide to using our website and understanding where project agreements begin."
+      effectiveDate="October 6, 2026"
       sections={sections}
       related={{ label: 'Read our Privacy Policy', href: '/privacy' }}
     />

@@ -21,7 +21,7 @@ export function ServicesSection() {
               <Link
                 key={service.slug}
                 href={`/services#${service.slug}`}
-                className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 md:p-8 transition-all duration-200 hover:border-brand hover:shadow-[0_12px_32px_rgba(20,33,61,0.10)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+                className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 md:p-8 transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors duration-200 group-hover:bg-brand group-hover:text-black">

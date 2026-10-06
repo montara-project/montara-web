@@ -24,7 +24,7 @@ export function ProjectsSection() {
               href={project.link ?? '/projects'}
               target={project.link ? '_blank' : undefined}
               rel={project.link ? 'noreferrer' : undefined}
-              className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-brand hover:shadow-[0_12px_32px_rgba(20,33,61,0.10)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+              className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-primary/8 text-primary uppercase tracking-wide">

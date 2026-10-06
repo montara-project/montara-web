@@ -5,7 +5,7 @@ import { META, META_URL } from '@/lib/constants/meta'
 
 const title = 'Privacy Policy | Montara Project'
 const description =
-  'Read the draft Montara Project privacy policy covering website inquiries, hosting, analytics, service providers, and privacy requests.'
+  'How the Montara Project website handles information, covering website inquiries, hosting, analytics, service providers, and privacy requests.'
 const url = `${META_URL}/privacy`
 
 export const metadata: Metadata = {

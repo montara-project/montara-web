@@ -46,7 +46,7 @@ const socialIcons: Record<string, ReactNode> = {
 
 export function SiteFooter() {
   return (
-    <footer className="w-full bg-navy-deep text-white relative mt-16 md:mt-24">
+    <footer className="w-full relative mt-16 md:mt-24">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/50 to-transparent"
@@ -68,7 +68,7 @@ export function SiteFooter() {
           </p>
           <Link
             href={`mailto:${site.email}`}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-brand text-black hover:bg-brand/85 h-9 px-4 py-2 mt-8"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-brand text-black hover:bg-brand/85 h-9 px-4 py-2 mt-8"
           >
             Start a project
           </Link>

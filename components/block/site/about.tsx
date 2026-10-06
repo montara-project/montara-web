@@ -23,7 +23,7 @@ export default function AboutSection() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_32px_rgba(20,33,61,0.10)]"
+              className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <Image

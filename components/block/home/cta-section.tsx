@@ -5,7 +5,7 @@ import { site } from '@/data/site'
 export function CtaSection() {
   return (
     <div className="flex flex-col items-center justify-center py-16 md:py-20 lg:py-28 w-full relative">
-      <div className="relative flex flex-col items-center justify-center text-center w-full px-6 py-20 md:py-24 mx-auto rounded-3xl bg-navy overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center text-center w-full px-6 py-20 md:py-24 mx-auto rounded-3xl bg-navy border border-white/10 overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-40 bg-brand/30 blur-[100px]"

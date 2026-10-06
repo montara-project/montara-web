@@ -14,21 +14,25 @@ export interface LegalSection {
 interface LegalPageProps {
   title: string
   description: string
+  effectiveDate: string
   sections: LegalSection[]
   related: { label: string; href: string }
 }
 
-export default function LegalPage({ title, description, sections, related }: LegalPageProps) {
+export default function LegalPage({
+  title,
+  description,
+  effectiveDate,
+  sections,
+  related,
+}: LegalPageProps) {
   return (
     <Section tag="Legal" title={title} description={description}>
       <div className="mx-auto mt-12 max-w-5xl">
-        <div className="rounded-xl border border-brand/30 bg-brand/10 p-5 text-sm leading-relaxed text-foreground">
-          <p className="font-semibold">Draft · Pending review</p>
-          <p className="mt-1">
-            This is an initial draft for owner and legal review, not a finalized policy. No
-            effective date has been set.
-          </p>
-        </div>
+        <p className="flex items-center gap-2 text-sm text-muted-foreground">
+          <span className="h-1 w-1 rounded-full bg-brand" aria-hidden="true" />
+          Effective date: {effectiveDate}
+        </p>
 
         <div className="mt-10 grid items-start gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
           <nav
