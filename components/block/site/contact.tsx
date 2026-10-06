@@ -12,7 +12,7 @@ export default function ContactSection() {
       description="Tell us about your project and we'll get back to you as soon as we can."
     >
       <div className="mt-14 md:mt-16 flex flex-col items-center reveal">
-        <div className="w-full max-w-xl rounded-2xl border border-border bg-card p-8 md:p-10 text-center shadow-[0_12px_32px_rgba(20,33,61,0.06)]">
+        <div className="w-full max-w-xl rounded-2xl border border-border bg-card p-8 md:p-10 text-center shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
           <span className="inline-flex size-12 items-center justify-center rounded-xl bg-brand/15 text-primary">
             <Mail className="w-5.5 h-5.5" strokeWidth={1.75} />
           </span>
@@ -25,7 +25,7 @@ export default function ContactSection() {
           </p>
           <Link
             href={`mailto:${site.email}`}
-            className="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-primary text-primary-foreground hover:bg-navy-deep hover:-translate-y-0.5 h-11 px-8"
+            className="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-primary text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 h-11 px-8"
           >
             <Mail className="w-4 h-4" />
             {site.email}

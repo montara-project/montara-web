@@ -37,63 +37,45 @@
   --radius-xl: calc(var(--radius) + 4px);
   /* Montara brand palette — coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
   --color-navy: #14213d;
-  --color-navy-deep: #0c1526;
   --color-brand: #fca311;
 }
 
+/* Montara dark theme — navy-tinted near-black page, one amber accent,
+   hairline borders, and four neutral text tiers (foreground, primary/70,
+   muted-foreground, and white/45 for the quietest footnotes). */
 :root {
-  --background: 0 0% 100%;
-  --foreground: 217 40% 10%;
-  --card: 0 0% 100%;
-  --card-foreground: 217 40% 10%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 217 40% 10%;
-  --primary: 217 52% 16%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 217 45% 94%;
-  --secondary-foreground: 217 52% 16%;
-  --muted: 220 20% 96%;
-  --muted-foreground: 220 9% 40%;
-  --accent: 220 20% 95%;
-  --accent-foreground: 217 52% 16%;
-  --destructive: 0 84.2% 60.2%;
+  --background: 220 20% 4%;
+  --foreground: 210 24% 96%;
+  --card: 220 20% 6%;
+  --card-foreground: 210 24% 96%;
+  --popover: 220 20% 7%;
+  --popover-foreground: 210 24% 96%;
+  --primary: 0 0% 96%;
+  --primary-foreground: 220 20% 6%;
+  --secondary: 220 14% 12%;
+  --secondary-foreground: 210 20% 92%;
+  --muted: 220 14% 11%;
+  --muted-foreground: 218 12% 62%;
+  --accent: 220 16% 13%;
+  --accent-foreground: 210 24% 96%;
+  --destructive: 0 68% 58%;
   --destructive-foreground: 0 0% 98%;
-  --border: 220 14% 90%;
-  --input: 220 14% 88%;
+  --border: 220 14% 13%;
+  --input: 220 14% 15%;
   --ring: 39 98% 53%;
-  --chart-1: 217 52% 16%;
+  --chart-1: 217 60% 62%;
   --chart-2: 39 98% 53%;
-  --chart-3: 217 35% 35%;
+  --chart-3: 217 35% 45%;
   --chart-4: 39 80% 70%;
-  --chart-5: 0 0% 45%;
+  --chart-5: 0 0% 55%;
   --radius: 0.5rem;
-}
-
-.dark {
-  --background: 0 0% 4%;
-  --foreground: 0 0% 98%;
-  --card: 217 40% 8%;
-  --card-foreground: 0 0% 98%;
-  --popover: 217 40% 8%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 39 98% 53%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 217 30% 14%;
-  --secondary-foreground: 0 0% 96%;
-  --muted: 217 25% 12%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 217 25% 14%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 72% 51%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 16%;
-  --input: 0 0% 16%;
-  --ring: 39 98% 53%;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    /* Tailwind defaults ring offsets to white; pin them to the page color */
+    --tw-ring-offset-color: var(--color-background);
   }
   html {
     @apply scroll-smooth motion-reduce:scroll-auto font-sans;
@@ -111,6 +93,16 @@
   ::selection {
     background-color: hsl(39 98% 53% / 0.85);
     color: black;
+  }
+  /* Film-grain overlay — breaks up flat dark surfaces at near-invisible opacity */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.03;
   }
 }
 
@@ -141,6 +133,27 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Hero product window tilts flat as the page scrolls (Orbit-style depth).
+   Transform-only, so the screenshot is never hidden from the reader. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-tilt {
+      animation: hero-tilt linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes hero-tilt {
+  from {
+    transform: perspective(1400px) rotateX(10deg) scale(0.97);
+  }
+  to {
+    transform: perspective(1400px) rotateX(0deg) scale(1);
   }
 }
 

@@ -1,6 +1,6 @@
 import './globals.css'
 
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 import { Outfit, Work_Sans } from 'next/font/google'
 
@@ -8,6 +8,10 @@ import { META } from '@/lib/constants/meta'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = META
+
+export const viewport: Viewport = {
+  themeColor: '#080a0c',
+}
 
 const outfit = Outfit({
   variable: '--font-outfit',
