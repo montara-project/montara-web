@@ -70,14 +70,14 @@ export function HeroSection() {
             </Link>
           </div>
 
-          <dl className="flex flex-wrap items-start justify-start gap-x-10 gap-y-6 mt-12">
+          <dl className="mt-12 flex flex-wrap items-start justify-start gap-x-8 gap-y-6 sm:gap-x-10">
             {heroStats.map((stat, i) => (
               <div
                 key={stat.label}
                 className={
                   i === 0
                     ? 'flex flex-col items-start'
-                    : 'flex flex-col items-start pl-10 border-l border-border'
+                    : 'flex flex-col items-start sm:border-l sm:border-border sm:pl-10'
                 }
               >
                 <dd className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-foreground tabular-nums">
