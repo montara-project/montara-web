@@ -8,9 +8,9 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          This draft Privacy Policy covers the {site.name} website and inquiries sent through its
-          contact links. It describes the website’s known features and highlights operational
-          details that still need confirmation before this policy is finalized.
+          This Privacy Policy covers the {site.name} website and inquiries sent through its contact
+          links. It describes what information is involved when you use the website and how that
+          information is handled.
         </p>
         <p>
           It does not cover third-party websites or personal information handled within a client
@@ -42,20 +42,16 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          The website uses Cloudflare infrastructure and loads an analytics script from
+          The website is hosted on Cloudflare infrastructure and loads an analytics script from
           analytics.masb0ymas.com. Visiting the website involves technical requests to these
           services. Such requests can include an IP address, browser information, requested URL, and
           request time.
         </p>
         <p>
-          The exact analytics fields, any cookies or browser storage, data destinations, and
-          retention settings must be verified before this policy is finalized. This draft does not
-          claim that analytics are anonymous, cookie-free, or disabled by default.
-        </p>
-        <p>
-          Browser settings may let you restrict cookies or scripts. Their effect depends on your
-          browser and the tools in use; this website does not currently provide a dedicated
-          analytics preference control.
+          Analytics data is used to understand website usage and to improve its content and
+          experience. Browser settings may let you restrict cookies or scripts; their effect depends
+          on your browser and the tools in use. This website does not provide a dedicated analytics
+          preference control.
         </p>
       </>
     ),
@@ -65,17 +61,13 @@ const sections: LegalSection[] = [
     title: 'How information is used',
     content: (
       <>
-        <p>The purposes to be covered by the finalized policy include:</p>
+        <p>We use information for the following purposes:</p>
         <ul>
           <li>Responding to inquiries and discussing potential projects.</li>
           <li>Delivering, maintaining, and protecting the website.</li>
           <li>Understanding website usage and improving its content and experience.</li>
           <li>Meeting applicable legal obligations and handling relevant requests.</li>
         </ul>
-        <p>
-          The owner must confirm actual processing practices and any applicable legal bases,
-          notices, or consent requirements before publication.
-        </p>
       </>
     ),
   },
@@ -83,18 +75,11 @@ const sections: LegalSection[] = [
     id: 'service-providers',
     title: 'Service providers & sharing',
     content: (
-      <>
-        <p>
-          Hosting, analytics, and email services may process information as part of operating the
-          website and responding to messages. Information may also need to be disclosed where
-          required by applicable law.
-        </p>
-        <p>
-          The finalized policy needs a confirmed account of providers, recipients, processing
-          locations, and any relevant international-transfer safeguards. These details have not yet
-          been established in this draft.
-        </p>
-      </>
+      <p>
+        Hosting, analytics, and email services may process information on our behalf as part of
+        operating the website and responding to messages. Information may also be disclosed where
+        required by applicable law. We do not sell personal information.
+      </p>
     ),
   },
   {
@@ -103,13 +88,13 @@ const sections: LegalSection[] = [
     content: (
       <>
         <p>
-          Retention can differ for correspondence, hosting logs, and analytics. The owner must
-          confirm retention periods or criteria, deletion practices, and any legal recordkeeping
-          requirements before this policy is published.
+          Retention differs for correspondence, hosting logs, and analytics. Information is kept
+          only as long as needed for the purposes described in this policy or as required by
+          applicable law.
         </p>
         <p>
-          No internet transmission or storage system can be guaranteed completely secure.
-          Appropriate safeguards should reflect the information being handled; this draft does not
+          We apply safeguards appropriate to the information being handled, but no internet
+          transmission or storage system can be guaranteed completely secure. This policy does not
           assert specific security certifications or controls.
         </p>
       </>
@@ -141,7 +126,7 @@ const sections: LegalSection[] = [
     content: (
       <p>
         Links to project websites and social profiles take you to services with their own privacy
-        practices. This draft does not cover how those services handle information. Review their
+        practices. This policy does not cover how those services handle information. Review their
         privacy policies before sharing personal information with them.
       </p>
     ),
@@ -151,9 +136,8 @@ const sections: LegalSection[] = [
     title: 'Policy updates',
     content: (
       <p>
-        This policy is awaiting owner and legal review. The finalized version should include an
-        effective date and verified operational details. Future updates should be dated here so you
-        can identify the version that applies.
+        We may update this policy from time to time. Updates are dated on this page so you can
+        identify the version that applies. This version is effective as of October 6, 2026.
       </p>
     ),
   },
@@ -164,6 +148,7 @@ export default function PrivacySection() {
     <LegalPage
       title="Privacy Policy"
       description="What you share, how this website connects to services, and where to ask about your information."
+      effectiveDate="October 6, 2026"
       sections={sections}
       related={{ label: 'Read our Terms of Use', href: '/terms' }}
     />
