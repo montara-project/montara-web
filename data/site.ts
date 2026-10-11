@@ -112,6 +112,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'MontaraPass',
+    category: 'Full-Stack',
+    description:
+      'A zero-knowledge, end-to-end encrypted password manager you can self-host. Logins are encrypted in the browser, so the server only ever stores ciphertext and wrapped keys — with a browser extension, role-based sharing, and key rotation on revoke.',
+    techStack: ['Go', 'Fiber', 'PostgreSQL', 'React', 'Docker'],
+    link: 'https://montarapass.com',
+  },
+  {
+    title: 'WaDesk',
+    category: 'Desktop',
+    description:
+      'A desktop shell that brings WhatsApp Web, Telegram Web, and Slack into one window. Each account runs in its own isolated native webview, stays loaded in the background, and shows its unread count in a side dock.',
+    techStack: ['Tauri 2', 'Rust', 'TypeScript'],
+    link: 'https://github.com/masb0ymas/wa-des-des',
+  },
+  {
     title: 'Veil App',
     category: 'Desktop',
     description:
