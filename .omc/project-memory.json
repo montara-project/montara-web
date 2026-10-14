@@ -1,0 +1,218 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1791950068784,
+  "projectRoot": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": ["package.json"]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": ["tsconfig.json"]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "latest",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "latest",
+        "category": "frontend"
+      },
+      {
+        "name": "vite",
+        "version": "8.2.2",
+        "category": "build"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "pnpm build",
+    "testCommand": null,
+    "lintCommand": "pnpm lint",
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "dev": "vinext dev",
+      "prebuild": "npm-run-all fmt lint:fix typecheck",
+      "build": "vinext build",
+      "start": "wrangler dev --config dist/server/wrangler.json",
+      "lint": "oxlint",
+      "lint:init": "oxlint --init",
+      "lint:fix": "oxlint --fix",
+      "fmt": "oxfmt",
+      "fmt:init": "oxfmt --init",
+      "fmt:check": "oxfmt --check",
+      "typecheck": "tsc --noEmit",
+      "doctor": "npx react-doctor@latest",
+      "predeploy": "npm run build",
+      "deploy": "vinext-cloudflare deploy --config dist/server/wrangler.json",
+      "preview": "npm run build && npm run start --",
+      "cf-typegen": "wrangler types --env-interface CloudflareEnv ./worker-configuration.d.ts",
+      "release": "release-it",
+      "release:pre": "release-it --preRelease=beta",
+      "release:patch": "release-it patch",
+      "release:minor": "release-it minor",
+      "release:major": "release-it major",
+      "prepare": "husky"
+    }
+  },
+  "conventions": {
+    "namingStyle": "camelCase",
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": true,
+    "workspaces": [],
+    "mainDirectories": ["app", "components", "lib", "public"],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "app": {
+      "path": "app",
+      "purpose": "Application code",
+      "fileCount": 3,
+      "lastAccessed": 1791950068266,
+      "keyFiles": ["globals.css", "layout.tsx", "not-found.tsx"]
+    },
+    "components": {
+      "path": "components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1791950068266,
+      "keyFiles": []
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1791950068269,
+      "keyFiles": ["site.ts"]
+    },
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 0,
+      "lastAccessed": 1791950068269,
+      "keyFiles": []
+    },
+    "graft": {
+      "path": "graft",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1791950068269,
+      "keyFiles": [
+        "INDEX.md",
+        "commitlint.config.md",
+        "next.config.md",
+        "postcss.config.md",
+        "vite.config.md"
+      ]
+    },
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1791950068270,
+      "keyFiles": ["utils.ts"]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 0,
+      "lastAccessed": 1791950068270,
+      "keyFiles": []
+    },
+    "app/api": {
+      "path": "app/api",
+      "purpose": "API routes",
+      "fileCount": 0,
+      "lastAccessed": 1791950068270,
+      "keyFiles": []
+    },
+    "graft/app": {
+      "path": "graft/app",
+      "purpose": "Application code",
+      "fileCount": 2,
+      "lastAccessed": 1791950068271,
+      "keyFiles": ["layout.md", "not-found.md"]
+    },
+    "graft/components": {
+      "path": "graft/components",
+      "purpose": "UI components",
+      "fileCount": 0,
+      "lastAccessed": 1791950068272,
+      "keyFiles": []
+    },
+    "graft/data": {
+      "path": "graft/data",
+      "purpose": "Data files",
+      "fileCount": 1,
+      "lastAccessed": 1791950068272,
+      "keyFiles": ["site.md"]
+    },
+    "graft/lib": {
+      "path": "graft/lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1791950068272,
+      "keyFiles": ["utils.md"]
+    },
+    "public/assets": {
+      "path": "public/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1791950068273,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": ".claude/skills/impeccable/reference/audit.md",
+      "accessCount": 1,
+      "lastAccessed": 1791950257697,
+      "type": "file"
+    },
+    {
+      "path": "components/ui/button-variants.ts",
+      "accessCount": 1,
+      "lastAccessed": 1791950784878,
+      "type": "file"
+    },
+    {
+      "path": "components/ui/button.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1791950786704,
+      "type": "file"
+    },
+    {
+      "path": "components/block/home/hero-section.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1791950807685,
+      "type": "file"
+    },
+    {
+      "path": "components/layouts/public/header.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1791950850016,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

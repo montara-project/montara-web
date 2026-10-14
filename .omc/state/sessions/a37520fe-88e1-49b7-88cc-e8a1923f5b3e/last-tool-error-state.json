@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"npx oxlint app components lib data/site.ts; echo \\\"oxlint exit=$?\\\"; S=/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/a37520fe-88e1-49b7-88cc-e8a1923f5...",
+  "error": "Exit code 7\noxlint exit=0\nhome 000",
+  "timestamp": "2026-10-14T04:10:13.623Z",
+  "retry_count": 1
+}

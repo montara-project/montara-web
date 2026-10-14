@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "jobId": "f6b1dd4b-5dbf-4401-9f1f-cfc1cd4c10fa",
+  "sessionId": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+  "scopeKey": "ad03783c76f10eb0d5a26fd9a1d3d54c868954f96233f6793e5ed1fb117bb448",
+  "revision": 76,
+  "createdAt": "2026-10-14T03:56:42.745Z",
+  "updatedAt": "2026-10-14T03:57:16.412Z",
+  "producerGraceExpiresAt": "2026-10-14T03:57:12.746Z",
+  "bestEffortDeadlineAt": "2026-10-14T03:58:05.746Z",
+  "producers": {
+    "core": {
+      "state": "sealed",
+      "intentKey": "858c7e35e4a6fb99e5425f6f0e34a34b7abed3b5c9280be591e4b7f64d5ae7f9",
+      "payloadDigest": "858c7e35e4a6fb99e5425f6f0e34a34b7abed3b5c9280be591e4b7f64d5ae7f9",
+      "sealedAt": "2026-10-14T03:57:13.929Z",
+      "sealedBy": "recovery"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-10-14T03:56:42.798Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "404ed2baefe04de627c49fc9fef6f92ed911f57e6127464b7f3e4698987bc4a5",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-14T03:57:12.795Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "b6a75dc1-3f0a-4e31-ba2e-cdc380cf50e2",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:13.918Z"
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "c0871072bba5bb22712c02c6d6d57c31cab4c8e4717c10283c2daea3c3aa9fac",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-10-14T03:56:42.798Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "f3d5d783f3c80a30438e55e958ce06b2d520daab3a9c63a8dc2c3239b97ab298",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-14T03:57:13.952Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "ca724b5c-61f5-44ed-b8ed-ea5fd07be938",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:14.328Z"
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "d3acdd7e3527e1a44f5ee3b3417669eb77863ee3573ab645e94a9e92543dea1f",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-14T03:57:14.346Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "d173e9be-d11b-44f2-84c8-d124a13f0607",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:14.690Z"
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "8a74a577af54dfb4b2dc5a58c7db4da0d0162fcb08d57b82ed7cf3f5103171ed",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-14T03:57:14.711Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "09c6489f-04b5-492f-b107-4c6dbb928da1",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:15.038Z"
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "e0d36dc85d45d5c5d512aaa7fc106787fe1d70bc45b4349316f542dd7f613394",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-14T03:57:15.056Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "fe9c9cba-33e7-40a4-80f7-3691cfeb0fac",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:15.371Z"
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "0058cfedbb24e5a9a664d2a44e3466b4536a49645b559f40c3e26137bbe8d6a0",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-14T03:57:15.389Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "cfb481d1-34a5-43af-8c87-23b757c87c7e",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:15.686Z"
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "2273896f2a638a3cda55f23f8095619f0e325146ff66d31b6216cad522cbf74a",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {},
+        "metrics": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "ended_at": "2026-10-14T03:57:13.262Z",
+          "reason": "prompt_input_exit",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        }
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-14T03:57:15.706Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "e36c28a9-da8f-4d05-a70e-85f68ae59d3f",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:16.044Z"
+    },
+    "spawn-next": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "7a09a7c8a00422e917f9cf9c641d8bee015f0822d00b5f8ef09b078523468a9d",
+      "payload": {
+        "transcriptPath": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+        "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+        "reason": "prompt_input_exit",
+        "input": {
+          "session_id": "687e6757-59c6-4ff2-af57-7ef28614c3b3",
+          "transcript_path": "/Users/masb0ymas/.claude/projects/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3.jsonl",
+          "cwd": "/Users/masb0ymas/Work/Projects/montara-projects/montara-web",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-masb0ymas-Work-Projects-montara-projects-montara-web/687e6757-59c6-4ff2-af57-7ef28614c3b3/scratchpad",
+          "prompt_id": "90a0d0e8-a1c7-45ee-9bd3-ec1582275ee2",
+          "hook_event_name": "SessionEnd",
+          "reason": "prompt_input_exit"
+        },
+        "initialTeamNames": [],
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-14T03:57:16.064Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "5d499205-9f21-44b3-94b2-932f879e8c12",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-14T03:57:22.746Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-14T03:57:16.376Z"
+    }
+  },
+  "owner": null,
+  "phase": "complete",
+  "recoverableFailure": {
+    "reason": "actions-settled",
+    "releasedAt": "2026-10-14T03:57:16.392Z",
+    "ownerNonce": "819482da-eb1e-44ad-8f18-f933c7370157"
+  },
+  "completion": {
+    "completedAt": "2026-10-14T03:57:16.392Z",
+    "terminalDigest": "b248fa2c8fec65256f1a3b80515a5ed37ee3e88ef1869060072196a0b50718ae",
+    "terminalRevision": 75
+  }
+}
