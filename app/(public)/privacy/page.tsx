@@ -1,21 +1,15 @@
 import type { Metadata } from 'next'
 
 import PrivacySection from '@/components/block/site/privacy'
-import { META, META_URL } from '@/lib/constants/meta'
-
-const title = 'Privacy Policy | Montara Project'
-const description =
-  'How the Montara Project website handles information, covering website inquiries, hosting, analytics, service providers, and privacy requests.'
-const url = `${META_URL}/privacy`
+import { pageMeta } from '@/lib/constants/meta'
 
 export const metadata: Metadata = {
-  ...META,
-  title,
-  description,
-  alternates: { canonical: url },
+  ...pageMeta(
+    'Privacy Policy | Montara Project',
+    'How the Montara Project website handles information, covering website inquiries, hosting, analytics, service providers, and privacy requests.',
+    '/privacy'
+  ),
   robots: { index: false, follow: true },
-  openGraph: { ...META.openGraph, title, description, url },
-  twitter: { ...META.twitter, title, description },
 }
 
 export default function PrivacyPage() {

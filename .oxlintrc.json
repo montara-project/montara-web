@@ -33,6 +33,11 @@
     ".next",
     "dist",
     ".wrangler",
-    ".vinext"
+    ".vinext",
+    ".agents",
+    ".claude",
+    ".omc",
+    ".zcode",
+    "data/skills"
   ]
 }

@@ -1,5 +1,3 @@
-'use client'
-
 import { ArrowUpRight } from 'lucide-react'
 
 import { Section } from '@/components/common/section'
@@ -22,13 +20,17 @@ export default function ProjectSection() {
             className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/8 text-primary uppercase tracking-wide">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-primary/8 text-primary uppercase tracking-wide">
                 {project.category}
               </span>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand" />
+              <ArrowUpRight
+                aria-hidden="true"
+                className="w-4 h-4 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand"
+              />
             </div>
             <h2 className="text-lg font-heading font-semibold text-foreground mt-4">
               {project.title}
+              {project.link && <span className="sr-only"> (opens in new tab)</span>}
             </h2>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
               {project.description}

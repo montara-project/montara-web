@@ -2,6 +2,8 @@ import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { buttonVariants } from '@/components/ui/button-variants'
+
 export default function NotFound() {
   return (
     <div className="relative flex min-h-dvh flex-col items-center justify-center px-6 text-center">
@@ -26,17 +28,11 @@ export default function NotFound() {
           back to where you came from.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 active:scale-95 select-none bg-primary text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 h-11 px-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
+          <Link href="/" className={buttonVariants({ size: 'xl' })}>
+            <ArrowLeft aria-hidden="true" />
             Back to home
           </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 active:scale-95 select-none border border-border bg-white/[0.04] text-foreground hover:border-muted-foreground/30 hover:bg-white/[0.08] h-11 px-8"
-          >
+          <Link href="/contact" className={buttonVariants({ variant: 'subtle', size: 'xl' })}>
             Contact us
           </Link>
         </div>
