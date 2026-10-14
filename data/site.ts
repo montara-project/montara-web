@@ -1,6 +1,6 @@
 import { AppWindow, Cloud, Code2, Server, type LucideIcon } from 'lucide-react'
 
-export const asset = (path: string) => `/assets/${path}`
+export const asset = (path: string) => `/assets/${path.replace(/^\/+/, '')}`
 
 export const site = {
   name: 'Montara Project',
@@ -54,13 +54,14 @@ export const services: Service[] = [
   },
   {
     slug: 'frontend',
-    title: 'Frontend Development',
-    tagline: 'Fast, polished interfaces',
+    title: 'Mobile & Frontend Development',
+    tagline: 'Fast, polished interfaces on web and mobile',
     description:
-      'We craft responsive, accessible web applications with a focus on performance and developer experience, turning ideas into intuitive products.',
+      'We craft responsive, accessible web and mobile applications with a focus on performance and developer experience, turning ideas into intuitive products.',
     icon: Code2,
     deliverables: [
       'Web application development',
+      'Mobile app development for iOS & Android',
       'Design system & UI implementation',
       'Performance optimization',
       'Responsive & accessible UI',
@@ -111,6 +112,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Tera Router',
+    category: 'Full-Stack',
+    description:
+      'A self-hosted gateway that puts many AI providers behind one endpoint. It translates between OpenAI Chat, Anthropic Messages, and Responses formats, routes across accounts with fallback, and adds per-key allowlists, guardrails, and usage analytics — shipped as a single Go container.',
+    techStack: ['Go', 'Docker', 'Vinext', 'Cloudflare'],
+    link: 'https://terarouter.xyz',
+  },
   {
     title: 'MontaraPass',
     category: 'Full-Stack',
@@ -201,20 +210,16 @@ export const process: ProcessStep[] = [
   },
 ]
 
-export const techStack: string[] = [
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Go',
-  'PostgreSQL',
-  'Redis',
-  'Docker',
-  'Kubernetes',
-  'AWS',
-  'Cloudflare',
-  'Terraform',
-]
+// Derived from the project stacks so the list never drifts from real work.
+// Ordered by how many projects use each technology; version suffixes ("Tauri 2") are folded.
+export const techStack: string[] = (() => {
+  const counts = new Map<string, number>()
+  for (const tech of projects.flatMap((project) => project.techStack)) {
+    const name = tech.replace(/\s+\d+$/, '')
+    counts.set(name, (counts.get(name) ?? 0) + 1)
+  }
+  return [...counts].sort((a, b) => b[1] - a[1]).map(([name]) => name)
+})()
 
 export interface TeamMember {
   name: string
@@ -260,7 +265,7 @@ export const footerColumns: FooterColumn[] = [
     title: 'Services',
     links: [
       { label: 'Backend Development', href: '/services#backend' },
-      { label: 'Frontend Development', href: '/services#frontend' },
+      { label: 'Mobile & Frontend Development', href: '/services#frontend' },
       { label: 'DevOps & Cloud', href: '/services#devops' },
       { label: 'Desktop Development', href: '/services#desktop-dev' },
     ],

@@ -1,12 +1,13 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import AboutSection from '@/components/block/site/about'
-import { META } from '@/lib/constants/meta'
+import { pageMeta } from '@/lib/constants/meta'
 
-export const metadata: Metadata = {
-  ...META,
-  title: 'About | Montara Project',
-}
+export const metadata: Metadata = pageMeta(
+  'About | Montara Project',
+  'Who we are and how we work: a software company building backend, mobile & frontend, DevOps, and Tauri desktop projects.',
+  '/about'
+)
 
 export default function AboutPage() {
   return <AboutSection />
