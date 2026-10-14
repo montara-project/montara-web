@@ -2,7 +2,9 @@ import { Clock, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 import { Section } from '@/components/common/section'
+import { buttonVariants } from '@/components/ui/button-variants'
 import { site } from '@/data/site'
+import { cn } from '@/lib/utils'
 
 export default function ContactSection() {
   return (
@@ -25,9 +27,9 @@ export default function ContactSection() {
           </p>
           <Link
             href={`mailto:${site.email}`}
-            className="mt-6 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-primary text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 h-11 px-8"
+            className={cn(buttonVariants({ size: 'xl' }), 'mt-6 max-w-full')}
           >
-            <Mail className="w-4 h-4" />
+            <Mail aria-hidden="true" />
             {site.email}
           </Link>
           <p className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground mt-5">
@@ -36,16 +38,17 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="flex items-center gap-6 mt-8">
+        <div className="flex items-center gap-2 mt-6">
           {site.socials.map((social) => (
             <a
               key={social.label}
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex min-h-11 items-center rounded-md px-3 text-sm text-muted-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
             >
               {social.label}
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
           ))}
         </div>

@@ -27,7 +27,7 @@ export function ServicesSection() {
                   <div className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/5 text-primary transition-colors duration-200 group-hover:bg-brand group-hover:text-black">
                     <Icon className="w-6 h-6" strokeWidth={1.75} />
                   </div>
-                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground/70 transition-colors duration-200 group-hover:text-brand">
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 group-hover:text-brand">
                     {service.comingSoon ? 'Coming soon' : 'Learn more'}
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </span>

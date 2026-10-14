@@ -106,13 +106,6 @@
   }
 }
 
-/* Light heading gradient, used on dark navy panels */
-.heading {
-  background-image: linear-gradient(to bottom, hsl(0 0% 100%), hsl(0 0% 100% / 0.82));
-  background-clip: text;
-  color: transparent;
-}
-
 /* Scroll-linked reveal: elements fade up as they enter the viewport.
    Progressive enhancement — browsers without view() timelines show content as-is. */
 @supports (animation-timeline: view()) {
@@ -179,6 +172,8 @@
   }
 }
 
-.animate-grid {
-  animation: grid 15s linear infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .animate-grid {
+    animation: grid 15s linear infinite;
+  }
 }

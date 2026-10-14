@@ -9,6 +9,7 @@ export const META_KEYWORDS = `montara project, web development, backend developm
 const SITE_NAME = 'Montara Project'
 
 export const META: Metadata = {
+  metadataBase: new URL(META_URL),
   title: META_TITLE,
   description: META_DESCRIPTION,
   keywords: META_KEYWORDS,
@@ -20,8 +21,8 @@ export const META: Metadata = {
     images: [
       {
         url: META_IMAGE,
-        width: 1200,
-        height: 630,
+        width: 988,
+        height: 922,
         alt: META_TITLE,
       },
     ],
@@ -29,7 +30,7 @@ export const META: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: META_TITLE,
     description: META_DESCRIPTION,
     site: META_URL,
@@ -46,3 +47,16 @@ export const META: Metadata = {
     },
   },
 } as const
+
+/** Per-page title, description, and canonical URL layered over the site defaults. */
+export function pageMeta(title: string, description: string, path: string): Metadata {
+  const url = `${META_URL}${path}`
+  return {
+    ...META,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { ...META.openGraph, title, description, url },
+    twitter: { ...META.twitter, title, description },
+  }
+}

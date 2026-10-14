@@ -3,11 +3,14 @@ import type { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { buttonVariants } from '@/components/ui/button-variants'
 import { footerColumns, site } from '@/data/site'
+import { cn } from '@/lib/utils'
 
 function GitHubIcon() {
   return (
     <svg
+      aria-hidden="true"
       className="w-5 h-5"
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -25,6 +28,7 @@ function GitHubIcon() {
 function LinkedInIcon() {
   return (
     <svg
+      aria-hidden="true"
       className="w-5 h-5"
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
@@ -63,12 +67,12 @@ export function SiteFooter() {
             />
             <span className="text-xl font-heading font-semibold">{site.name}</span>
           </div>
-          <p className="text-sm text-white/60 mt-4 leading-relaxed">
+          <p className="text-sm text-foreground/60 mt-4 leading-relaxed">
             {site.tagline}. We build backend, frontend, and DevOps solutions.
           </p>
           <Link
             href={`mailto:${site.email}`}
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-95 select-none bg-brand text-black hover:bg-brand/85 h-9 px-4 py-2 mt-8"
+            className={cn(buttonVariants({ size: 'lg' }), 'mt-8')}
           >
             Start a project
           </Link>
@@ -76,13 +80,13 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 gap-8 w-full max-w-lg">
           {footerColumns.map((col) => (
             <div key={col.title} className="flex flex-col gap-4">
-              <h4 className="text-sm font-semibold tracking-wide text-white">{col.title}</h4>
-              <ul className="space-y-3 w-full">
+              <h2 className="text-sm font-semibold tracking-wide text-foreground">{col.title}</h2>
+              <ul className="w-full">
                 {col.links.map((link) => (
                   <li key={link.label} className="w-full">
                     <Link
                       href={link.href}
-                      className="text-sm text-white/55 hover:text-brand transition-colors w-full"
+                      className="inline-block py-1.5 text-sm text-foreground/55 hover:text-brand transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -94,19 +98,19 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="w-full">
-        <div className="size-full mx-auto max-w-7xl px-4 md:px-12 py-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <p className="text-sm text-white/45">
+        <div className="size-full mx-auto max-w-7xl px-4 md:px-12 py-6 border-t border-foreground/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
+          <p className="text-sm text-foreground/50">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {site.socials.map((social) => (
               <a
                 key={social.label}
-                className="p-1 text-white/55 hover:text-brand transition-colors"
+                className="inline-flex size-11 items-center justify-center rounded-md text-foreground/55 hover:text-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={social.label}
+                aria-label={`${social.label} (opens in new tab)`}
               >
                 {socialIcons[social.label]}
               </a>
