@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T04:27:19+00:00",
+  "title": "Design System: Montara Project",
+  "extensions": {
+    "colorMeta": {
+      "terminal-black": {
+        "role": "neutral",
+        "displayName": "Terminal Black",
+        "canonical": "hsl(220 20% 4%)",
+        "tonalRamp": [
+          "#1f242e",
+          "#353e50",
+          "#4b5871",
+          "#627293",
+          "#828fab",
+          "#a3adc2",
+          "#c8ceda",
+          "#f0f1f5"
+        ]
+      },
+      "console-surface": {
+        "role": "neutral",
+        "displayName": "Console Surface",
+        "canonical": "hsl(220 20% 6%)",
+        "tonalRamp": [
+          "#1f242e",
+          "#353e50",
+          "#4b5871",
+          "#627293",
+          "#828fab",
+          "#a3adc2",
+          "#c8ceda",
+          "#f0f1f5"
+        ]
+      },
+      "console-raised": {
+        "role": "neutral",
+        "displayName": "Console Raised",
+        "canonical": "hsl(220 14% 12%)",
+        "tonalRamp": [
+          "#21242c",
+          "#393f4c",
+          "#515a6c",
+          "#69758c",
+          "#8892a5",
+          "#a8afbd",
+          "#cbcfd8",
+          "#f0f2f4"
+        ]
+      },
+      "console-well": {
+        "role": "neutral",
+        "displayName": "Console Well",
+        "canonical": "hsl(220 14% 11%)",
+        "tonalRamp": [
+          "#21242c",
+          "#393f4c",
+          "#515a6c",
+          "#69758c",
+          "#8892a5",
+          "#a8afbd",
+          "#cbcfd8",
+          "#f0f2f4"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "hsl(220 14% 13%)",
+        "tonalRamp": [
+          "#21242c",
+          "#393f4c",
+          "#515a6c",
+          "#69758c",
+          "#8892a5",
+          "#a8afbd",
+          "#cbcfd8",
+          "#f0f2f4"
+        ]
+      },
+      "console-white": {
+        "role": "neutral",
+        "displayName": "Console White",
+        "canonical": "hsl(0 0% 96%)",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#969696",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "readout": {
+        "role": "neutral",
+        "displayName": "Readout",
+        "canonical": "hsl(210 24% 96%)",
+        "tonalRamp": [
+          "#1d262f",
+          "#324252",
+          "#485e75",
+          "#5d7a98",
+          "#7d96b0",
+          "#a0b2c5",
+          "#c6d1dc",
+          "#eff2f5"
+        ]
+      },
+      "readout-muted": {
+        "role": "neutral",
+        "displayName": "Readout Muted",
+        "canonical": "hsl(218 12% 62%)",
+        "tonalRamp": [
+          "#22252b",
+          "#3a404a",
+          "#535b6a",
+          "#6c7689",
+          "#8a93a3",
+          "#a9b0bc",
+          "#ccd0d7",
+          "#f1f2f4"
+        ]
+      },
+      "signal-amber": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "canonical": "#fca311",
+        "tonalRamp": [
+          "#4c2f01",
+          "#835202",
+          "#ba7502",
+          "#f29703",
+          "#fcaf31",
+          "#fdc568",
+          "#fedca4",
+          "#fff5e6"
+        ]
+      },
+      "deep-console-navy": {
+        "role": "secondary",
+        "displayName": "Deep Console Navy",
+        "canonical": "#14213d",
+        "tonalRamp": [
+          "#131f3a",
+          "#213664",
+          "#2f4d8e",
+          "#3c64b8",
+          "#6283cb",
+          "#8ca4d9",
+          "#bac9e8",
+          "#ecf0f9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home hero H1 only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page H1s and section H2s."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and step titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lead paragraphs and legal copy."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Card descriptions, nav links, buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase section tags and category chips."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-float",
+        "value": "0 2px 16px rgba(0,0,0,0.35)",
+        "purpose": "Fixed glass header."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 12px 40px rgba(0,0,0,0.45)",
+        "purpose": "Hover only on interactive cards."
+      },
+      {
+        "name": "menu-float",
+        "value": "0 12px 40px rgba(0,0,0,0.5)",
+        "purpose": "Mobile menu panel."
+      },
+      {
+        "name": "showcase",
+        "value": "0 24px 80px rgba(0,0,0,0.5)",
+        "purpose": "Hero product frame only."
+      },
+      {
+        "name": "action-lift",
+        "value": "0 10px 28px rgba(0,0,0,0.4)",
+        "purpose": "Hero primary CTA only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "200ms ease",
+        "purpose": "Color, border, and transform changes on hover and focus."
+      },
+      {
+        "name": "hover-rise",
+        "value": "translateY(-2px)",
+        "purpose": "Interactive cards and hero buttons on hover."
+      },
+      {
+        "name": "reveal-up",
+        "value": "opacity 0\u21921, translateY(1.5rem)\u21920 over animation-range entry 0%\u201355% (view timeline)",
+        "purpose": "Section entrance; progressive enhancement, reduced-motion guarded."
+      },
+      {
+        "name": "hero-tilt",
+        "value": "perspective(1400px) rotateX(10deg) scale(.97) \u2192 flat over entry 0%\u201360%",
+        "purpose": "Hero product frame settling as the page scrolls."
+      },
+      {
+        "name": "grid-drift",
+        "value": "translateY(-50%\u21920) 15s linear infinite",
+        "purpose": "CTA panel perspective grid; reduced-motion guarded."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Console White primary action (\"Start a project\") on every surface, including the navy panel.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Start a project <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 32px;border-radius:8px;border:1px solid transparent;font:500 14px/1 'Work Sans',ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s;outline:none;background:hsl(var(--primary));color:hsl(var(--primary-foreground));text-decoration:none;}.ds-btn-primary:hover{background:hsl(var(--primary) / .9);}.ds-btn-primary:focus-visible{box-shadow:0 0 0 3px rgba(252,163,17,.5);border-color:#fca311;}.ds-btn-primary:active{transform:translateY(1px);}"
+    },
+    {
+      "name": "Subtle Button",
+      "kind": "button",
+      "refersTo": "button-subtle",
+      "description": "Secondary action on the page background: 4% white wash with a hairline border.",
+      "html": "<a class=\"ds-btn-subtle\" href=\"#\">View our work</a>",
+      "css": ".ds-btn-subtle{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 32px;border-radius:8px;border:1px solid transparent;font:500 14px/1 'Work Sans',ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s;outline:none;background:hsl(var(--foreground) / .04);border-color:hsl(var(--border));color:hsl(var(--foreground));text-decoration:none;}.ds-btn-subtle:hover{background:hsl(var(--foreground) / .08);border-color:hsl(var(--muted-foreground) / .3);}.ds-btn-subtle:focus-visible{box-shadow:0 0 0 3px rgba(252,163,17,.5);border-color:#fca311;}.ds-btn-subtle:active{transform:translateY(1px);}"
+    },
+    {
+      "name": "Subtle Navy Button",
+      "kind": "button",
+      "refersTo": "button-subtle-navy",
+      "description": "Secondary action inside the Deep Console Navy CTA panel.",
+      "html": "<div style=\"background:#14213d;padding:24px;border-radius:24px\"><a class=\"ds-btn-subtle-navy\" href=\"#\">Contact us</a></div>",
+      "css": ".ds-btn-subtle-navy{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 32px;border-radius:8px;border:1px solid transparent;font:500 14px/1 'Work Sans',ui-sans-serif,system-ui,sans-serif;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,transform .2s;outline:none;background:hsl(var(--foreground) / .05);border-color:hsl(var(--foreground) / .25);color:hsl(var(--foreground));text-decoration:none;}.ds-btn-subtle-navy:hover{background:hsl(var(--foreground) / .15);}.ds-btn-subtle-navy:focus-visible{box-shadow:0 0 0 3px rgba(252,163,17,.5);border-color:#fca311;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Floating glass header nav: muted links, Readout on hover, amber underline bar on the active page.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main\"><a class=\"ds-nav-link is-active\" aria-current=\"page\" href=\"#\">Home</a><a class=\"ds-nav-link\" href=\"#\">Services</a><a class=\"ds-nav-link\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:4px;align-items:center;height:48px;padding:0 8px;background:hsl(var(--card) / .8);backdrop-filter:blur(24px);border:1px solid hsl(var(--border));border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,.35);}.ds-nav-link{position:relative;display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:6px;font:500 14px/1 'Work Sans',ui-sans-serif,system-ui,sans-serif;color:hsl(var(--muted-foreground));text-decoration:none;transition:color .2s,background-color .2s;outline:none;}.ds-nav-link:hover{color:hsl(var(--foreground));background:hsl(var(--foreground) / .05);}.ds-nav-link:focus-visible{box-shadow:0 0 0 2px rgba(252,163,17,.6);}.ds-nav-link.is-active{color:hsl(var(--foreground));}.ds-nav-link.is-active::after{content:'';position:absolute;left:16px;right:16px;bottom:-1px;height:2px;border-radius:9999px;background:#fca311;}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat bordered Console Surface card; hover tints the border amber, lifts 2px, and adds the Card lift shadow.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-chip-category\">Full-Stack</span><h3 class=\"ds-card-title\">Tera Router</h3><p class=\"ds-card-body\">A self-hosted gateway that puts many AI providers behind one endpoint.</p><span class=\"ds-chip-row\"><span class=\"ds-chip-tech\">Go</span><span class=\"ds-chip-tech\">Docker</span></span></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:12px;max-width:340px;padding:24px;border-radius:16px;border:1px solid hsl(var(--border));background:hsl(var(--card));color:hsl(var(--foreground));text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .2s;outline:none;}.ds-card:hover{border-color:rgba(252,163,17,.5);box-shadow:0 12px 40px rgba(0,0,0,.45);transform:translateY(-2px);}.ds-card:focus-visible{box-shadow:0 0 0 2px rgba(252,163,17,.6);}.ds-card-title{margin:4px 0 0;font:600 18px/1.4 Outfit,ui-sans-serif,system-ui,sans-serif;}.ds-card-body{margin:0;font:400 14px/1.625 'Work Sans',ui-sans-serif,system-ui,sans-serif;color:hsl(var(--muted-foreground));}.ds-chip-category{align-self:flex-start;padding:4px 10px;border-radius:6px;background:hsl(var(--primary) / .08);color:hsl(var(--primary));font:600 12px/1.33 'Work Sans',ui-sans-serif,system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;}.ds-chip-row{display:flex;flex-wrap:wrap;gap:8px;}.ds-chip-tech{padding:4px 8px;border-radius:6px;background:hsl(var(--muted));color:hsl(var(--muted-foreground));font:400 12px/1.33 'Work Sans',ui-sans-serif,system-ui,sans-serif;}"
+    },
+    {
+      "name": "Tech Tag",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Home \"Technologies we work with\" pill: hairline border on Console Surface.",
+      "html": "<span class=\"ds-tag\">React</span><span class=\"ds-tag\">Go</span><span class=\"ds-tag\">Tauri</span>",
+      "css": ".ds-tag{display:inline-flex;margin:0 6px 6px 0;padding:8px 16px;border-radius:9999px;border:1px solid hsl(var(--border));background:hsl(var(--card));color:hsl(var(--muted-foreground));font:400 14px/1.43 'Work Sans',ui-sans-serif,system-ui,sans-serif;transition:color .2s,border-color .2s;}.ds-tag:hover{color:hsl(var(--primary));border-color:hsl(var(--primary) / .4);}"
+    },
+    {
+      "name": "Section Tag + Headline",
+      "kind": "custom",
+      "description": "Signal Amber rule plus uppercase label above an Outfit headline.",
+      "html": "<div class=\"ds-section\"><span class=\"ds-section-tag\"><span class=\"ds-rule\"></span>Services</span><h2 class=\"ds-headline\">What we do</h2></div>",
+      "css": ".ds-section-tag{display:inline-flex;align-items:center;gap:10px;font:600 12px/1.33 'Work Sans',ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:hsl(var(--primary));}.ds-rule{width:24px;height:1px;background:#fca311;}.ds-headline{margin:20px 0 0;font:600 48px/1.12 Outfit,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.025em;color:hsl(var(--foreground));}"
+    },
+    {
+      "name": "Process Step",
+      "kind": "custom",
+      "description": "Numbered step: amber Outfit numeral over a hairline rule with an amber segment.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-step-num\">01</span><h3 class=\"ds-step-title\">Discover</h3><p class=\"ds-step-body\">We dig into your goals, constraints, and users to define the right scope.</p></div>",
+      "css": ".ds-step{position:relative;max-width:260px;padding-top:24px;border-top:2px solid hsl(var(--border));}.ds-step::before{content:'';position:absolute;top:-2px;left:0;width:40px;height:2px;background:#fca311;}.ds-step-num{font:600 36px/1.1 Outfit,ui-sans-serif,system-ui,sans-serif;color:#fca311;font-variant-numeric:tabular-nums;}.ds-step-title{margin:12px 0 0;font:600 18px/1.4 Outfit,ui-sans-serif,system-ui,sans-serif;color:hsl(var(--foreground));}.ds-step-body{margin:8px 0 0;font:400 14px/1.625 'Work Sans',ui-sans-serif,system-ui,sans-serif;color:hsl(var(--muted-foreground));}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shipping Console",
+    "overview": "Montara looks like the console of a team that ships: a near-black working surface, crisp hairline structure, white readouts, and one amber signal light that marks what matters right now. The mood is bold, modern, and fast. Confidence comes from heavy Outfit headlines, high-contrast white primary actions, and quick, small motion responses, not from ornament. The interface stays out of the way so the work (product screenshots, project cards, public repos) carries the proof.\n\nDensity is moderate: generous section spacing (80\u2013112px) frames dense, scannable content blocks (cards, chips, numbered steps). Atmosphere is limited to quiet layers that read as instrument glass, not decoration: a near-invisible film grain, a faint grid that fades out under the hero, and soft amber and navy glows built from gradients rather than blur filters. The site is dark-only by design.\n\nConfirmed anti-references: generic agency templates (stock photography, 3D people, gradients everywhere, fake testimonials), neon/crypto/cyberpunk glow and glitch, corporate enterprise blue, and any light theme.",
+    "keyCharacteristics": [
+      "Dark-only: Terminal Black page, Console Surface cards, hairline borders.",
+      "One accent: Signal Amber, used as a signal, never as a fill for large areas.",
+      "White is the primary action color; amber marks state and emphasis.",
+      "Outfit semibold headlines with tight tracking over a Work Sans body.",
+      "Fast, small, transform-only motion that respects reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Signal Amber is the only hue besides navy. Use it for state, emphasis, and small marks. Never as a section background, never as large body text, and never for more than one primary CTA style.",
+        "section": "colors"
+      },
+      {
+        "name": "The White Action Rule",
+        "body": "The primary action (\"Start a project\") is Console White on every surface, including the navy panel. Amber buttons are not part of the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heavy Headline Rule",
+        "body": "Headlines are Outfit at weight 600 with -0.025em tracking. Body copy is never Outfit, and headlines are never Work Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "Cards are flat at rest (border only). Shadows appear on hover or on genuinely floating layers. Never stack a resting shadow on a bordered card.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Gradient Glow Rule",
+        "body": "Ambient glows are radial or conic gradients, never `filter: blur()` layers. The single blurred conic halo behind the hero screenshot is the one exception.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the page on Terminal Black and build depth with Console Surface, Console Well, and 1px Hairline borders.",
+      "Do use Console White for every primary action, and the shared `buttonVariants` for every button-styled link.",
+      "Do reserve Signal Amber for state, focus, and small emphasis marks (underlines, rules, numbers, checks).",
+      "Do set headlines in Outfit 600 with -0.025em tracking and body in Work Sans with relaxed leading.",
+      "Do keep motion small (2px rises, 200ms) and put any looping or scroll-linked animation behind `prefers-reduced-motion: no-preference`.",
+      "Do keep text at or above Readout `/50` opacity, and secondary text at Readout Muted, which holds AA contrast.",
+      "Do show real product screenshots and real repos as the visual proof."
+    ],
+    "donts": [
+      "Don't add a light theme or light sections.",
+      "Don't use stock photography, 3D characters, decorative illustration, or agency-template gradient washes.",
+      "Don't use neon glows, saturated multi-color gradients, or glitch effects.",
+      "Don't introduce corporate enterprise blue or any second accent hue.",
+      "Don't make amber a large fill or a second primary button style.",
+      "Don't use `filter: blur()` for ambient glows, gradient-clipped text, or resting shadows on bordered cards.",
+      "Don't use emoji as icons; use Lucide line icons at a 1.75\u20132 stroke."
+    ]
+  }
+}
