@@ -1,18 +1,23 @@
 import { Check } from 'lucide-react'
 
+import type { Locale } from '@/lib/i18n'
+
 import { Section } from '@/components/common/section'
+import { getDictionary } from '@/data/i18n'
 import { services } from '@/data/site'
 
-export default function ServiceSection() {
+export default function ServiceSection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
   return (
     <Section
-      tag="Services"
-      title="What we do"
-      description="We handle project-based work across backend, frontend, and DevOps — plus cross-platform desktop apps built with Tauri."
+      tag={t.servicesPage.tag}
+      title={t.servicesPage.title}
+      description={t.servicesPage.description}
     >
       <div className="mt-16 flex flex-col gap-8 max-w-4xl mx-auto">
         {services.map((service) => {
           const Icon = service.icon
+          const copy = t.services[service.slug]
           return (
             <section
               key={service.slug}
@@ -24,26 +29,26 @@ export default function ServiceSection() {
                   <Icon className="w-5.5 h-5.5" strokeWidth={1.75} />
                 </span>
                 <h2 className="text-2xl font-heading font-semibold text-foreground">
-                  {service.title}
+                  {copy.title}
                 </h2>
                 {service.comingSoon && (
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-brand/15 text-foreground/80 uppercase tracking-wide">
-                    Coming soon
+                    {t.common.comingSoon}
                   </span>
                 )}
               </div>
-              <p className="text-sm font-medium text-primary/70 mt-3">{service.tagline}</p>
+              <p className="text-sm font-medium text-primary/70 mt-3">{copy.tagline}</p>
               <p className="text-base text-muted-foreground mt-2 leading-relaxed">
-                {service.description}
+                {copy.description}
               </p>
 
               {!service.comingSoon && (
                 <>
                   <h3 className="text-sm font-semibold text-foreground mt-6">
-                    What&apos;s included
+                    {t.servicesPage.included}
                   </h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3">
-                    {service.deliverables.map((item) => (
+                    {copy.deliverables.map((item) => (
                       <li
                         key={item}
                         className="flex items-center gap-2 text-sm text-muted-foreground"
@@ -53,7 +58,9 @@ export default function ServiceSection() {
                       </li>
                     ))}
                   </ul>
-                  <h3 className="text-sm font-semibold text-foreground mt-6">Technologies</h3>
+                  <h3 className="text-sm font-semibold text-foreground mt-6">
+                    {t.servicesPage.technologies}
+                  </h3>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {service.technologies.map((tech) => (
                       <span

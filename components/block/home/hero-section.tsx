@@ -3,16 +3,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { buttonVariants } from '@/components/ui/button-variants'
+import { getDictionary } from '@/data/i18n'
 import { asset, projects, services, site } from '@/data/site'
+import { localizePath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
-const heroStats = [
-  { value: String(projects.length), label: 'Projects shipped' },
-  { value: String(services.length), label: 'Service areas' },
-  { value: '48h', label: 'Typical response' },
-]
+export function HeroSection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale).hero
+  const common = getDictionary(locale).common
+  const heroStats = [
+    { value: String(projects.length), label: t.stats.projects },
+    { value: String(services.length), label: t.stats.services },
+    { value: '48h', label: t.stats.response },
+  ]
 
-export function HeroSection() {
   return (
     <section className="relative isolate w-screen ml-[calc(50%-50vw)] overflow-hidden pt-32 md:pt-44 pb-12 md:pb-16">
       {/* Gradient glows instead of filter: blur() layers — same look, no per-frame blur cost */}
@@ -29,25 +33,27 @@ export function HeroSection() {
               <span className="relative inline-flex size-2 rounded-full bg-brand" />
             </span>
             <span className="text-xs font-medium tracking-wide text-muted-foreground">
-              Available for new projects
+              {t.available}
             </span>
           </span>
 
+          {/* The brand line stays English in every locale (lang="en" keeps pronunciation right) */}
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-foreground mt-7 leading-[1.06] text-balance">
-            Build something{' '}
+            <span lang="en">{t.titleLead}</span>{' '}
             <span className="relative inline-block whitespace-nowrap">
               <span
                 aria-hidden="true"
                 className="absolute inset-x-[-0.08em] bottom-[0.06em] h-[0.3em] -rotate-1 rounded-full bg-brand/40"
               />
-              <span className="relative">different</span>
-            </span>{' '}
-            with Montara Project
+              <span lang="en" className="relative">
+                {t.titleEmphasis}
+              </span>
+            </span>
+            {t.titleTrail && <span lang="en"> {t.titleTrail}</span>}
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mt-6 leading-relaxed text-pretty">
-            We design and build reliable web products end to end — backend, frontend, and DevOps.
-            From idea to production, we ship software that scales.
+            {t.lead}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-9 w-full sm:w-auto">
@@ -58,14 +64,14 @@ export function HeroSection() {
                 'w-full sm:w-max shadow-[0_10px_28px_rgba(0,0,0,0.4)]'
               )}
             >
-              Start a project
+              {common.startProject}
               <ArrowRight />
             </Link>
             <Link
-              href="/projects"
+              href={localizePath(locale, '/projects')}
               className={cn(buttonVariants({ variant: 'subtle', size: 'xl' }), 'w-full sm:w-max')}
             >
-              View our work
+              {common.viewWork}
             </Link>
           </div>
 
@@ -97,7 +103,7 @@ export function HeroSection() {
               <div className="rounded-lg lg:rounded-xl border border-foreground/10 bg-black overflow-hidden">
                 <Image
                   src={asset('images/terarouter.png')}
-                  alt="Tera Router AI gateway dashboard built by Montara Project"
+                  alt={t.frameAlt}
                   width={1879}
                   height={984}
                   priority
@@ -115,8 +121,8 @@ export function HeroSection() {
                 <Zap className="size-4" strokeWidth={2} />
               </span>
               <div className="text-start">
-                <p className="text-xs font-semibold text-foreground">End-to-end delivery</p>
-                <p className="text-[11px] text-muted-foreground">Backend · Frontend · DevOps</p>
+                <p className="text-xs font-semibold text-foreground">{t.badgeTitle}</p>
+                <p className="text-[11px] text-muted-foreground">{t.badgeBody}</p>
               </div>
             </div>
           </div>

@@ -1,16 +1,21 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+
+import type { Locale } from '@/lib/i18n'
+
+import { getDictionary } from '@/data/i18n'
 
 import { SiteFooter } from './footer'
 import { SiteHeader } from './header'
 
-export default function PublicLayout({ children }: PropsWithChildren) {
+export default function PublicLayout({ children, locale }: PropsWithChildren<{ locale: Locale }>) {
+  const t = getDictionary(locale)
   return (
     <>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground focus:shadow-lg"
       >
-        Skip to content
+        {t.nav.skipToContent}
       </a>
       <div
         id="home"
@@ -18,11 +23,11 @@ export default function PublicLayout({ children }: PropsWithChildren) {
         aria-hidden="true"
       />
       <div className="relative w-full h-full">
-        <SiteHeader />
+        <SiteHeader locale={locale} t={t.nav} />
         <main id="main" className="mx-auto w-full z-40 px-4 md:px-12 relative max-w-7xl">
           {children}
         </main>
-        <SiteFooter />
+        <SiteFooter locale={locale} />
       </div>
     </>
   )

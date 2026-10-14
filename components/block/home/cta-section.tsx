@@ -1,10 +1,13 @@
 import Link from 'next/link'
 
 import { buttonVariants } from '@/components/ui/button-variants'
+import { getDictionary } from '@/data/i18n'
 import { site } from '@/data/site'
+import { localizePath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
-export function CtaSection() {
+export function CtaSection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
   return (
     <div className="flex flex-col items-center justify-center py-16 md:py-20 lg:py-28 w-full relative">
       <div className="relative flex flex-col items-center justify-center text-center w-full px-6 py-20 md:py-24 mx-auto rounded-3xl bg-navy border border-foreground/10 overflow-hidden">
@@ -26,27 +29,26 @@ export function CtaSection() {
         <div className="relative z-10 flex flex-col items-center justify-center w-full">
           <span aria-hidden="true" className="inline-block w-10 h-1 rounded-full bg-brand mb-8" />
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-semibold text-foreground !leading-tight tracking-tight">
-            Let&apos;s build <br className="hidden md:block" /> something different
+            {t.home.cta.titleLead} <br className="hidden md:block" /> {t.home.cta.titleTrail}
           </h2>
           <p className="text-base md:text-lg text-center text-foreground/70 max-w-xl mx-auto mt-6 leading-relaxed">
-            Have a project in mind? Tell us about it and we&apos;ll get back to you with how we can
-            help.
+            {t.home.cta.body}
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 mt-9">
             <Link
               href={`mailto:${site.email}`}
               className={cn(buttonVariants({ size: 'xl' }), 'w-full md:w-max')}
             >
-              Start a project
+              {t.common.startProject}
             </Link>
             <Link
-              href="/contact"
+              href={localizePath(locale, '/contact')}
               className={cn(
                 buttonVariants({ variant: 'subtle-navy', size: 'xl' }),
                 'w-full md:w-max'
               )}
             >
-              Contact us
+              {t.common.contactUs}
             </Link>
           </div>
         </div>

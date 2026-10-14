@@ -1,20 +1,19 @@
 import { ArrowUpRight } from 'lucide-react'
 
 import { Section } from '@/components/common/section'
+import { getDictionary } from '@/data/i18n'
 import { projects } from '@/data/site'
+import { localizePath, type Locale } from '@/lib/i18n'
 
-export default function ProjectSection() {
+export default function ProjectSection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
   return (
-    <Section
-      tag="Portfolio"
-      title="Our projects"
-      description="A selection of the products and systems we have designed, built, and shipped."
-    >
+    <Section {...t.projectsPage}>
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
         {projects.map((project) => (
           <a
-            key={project.title}
-            href={project.link ?? '/projects'}
+            key={project.slug}
+            href={project.link ?? localizePath(locale, '/projects')}
             target={project.link ? '_blank' : undefined}
             rel={project.link ? 'noreferrer' : undefined}
             className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:border-brand/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
@@ -30,10 +29,10 @@ export default function ProjectSection() {
             </div>
             <h2 className="text-lg font-heading font-semibold text-foreground mt-4">
               {project.title}
-              {project.link && <span className="sr-only"> (opens in new tab)</span>}
+              {project.link && <span className="sr-only"> {t.common.opensInNewTab}</span>}
             </h2>
             <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-              {project.description}
+              {t.projects[project.slug]}
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               {project.techStack.map((tech) => (

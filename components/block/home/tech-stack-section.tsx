@@ -1,15 +1,14 @@
+import type { Locale } from '@/lib/i18n'
+
 import { SectionTitle } from '@/components/common/section'
+import { getDictionary } from '@/data/i18n'
 import { techStack } from '@/data/site'
 
-export function TechStackSection() {
+export function TechStackSection({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale).home.tech
   return (
     <div className="flex flex-col justify-center py-20 md:py-28 w-full">
-      <SectionTitle
-        align="left"
-        tag="Tech stack"
-        title="Technologies we work with"
-        description="We choose the right tool for the job and stay current with the modern web ecosystem."
-      />
+      <SectionTitle align="left" {...t} />
       <div className="mt-12 md:mt-16 w-full reveal">
         <div className="flex flex-wrap gap-3">
           {techStack.map((tech) => (

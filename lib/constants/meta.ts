@@ -1,4 +1,7 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+
+import { getDictionary, type Dictionary } from '@/data/i18n'
+import { localizePath, locales, ogLocales, type Locale } from '@/lib/i18n'
 
 export const META_URL = 'https://montaraproject.com'
 export const META_TITLE = `Montara Project - Build Something Different`
@@ -48,15 +51,31 @@ export const META: Metadata = {
   },
 } as const
 
-/** Per-page title, description, and canonical URL layered over the site defaults. */
-export function pageMeta(title: string, description: string, path: string): Metadata {
-  const url = `${META_URL}${path}`
+type PageKey = keyof Dictionary['meta']
+
+/**
+ * Per-page, per-locale metadata: localized title and description, a canonical URL for this
+ * locale, hreflang alternates for every locale (x-default → English), and the OG locale.
+ */
+export function pageMeta(locale: Locale, page: PageKey, path: string): Metadata {
+  const { title, description } = getDictionary(locale).meta[page]
+  const url = `${META_URL}${localizePath(locale, path)}`
+  const languages = Object.fromEntries(
+    locales.map((l) => [l, `${META_URL}${localizePath(l, path)}`])
+  ) as Record<Locale, string>
   return {
     ...META,
     title,
     description,
-    alternates: { canonical: url },
-    openGraph: { ...META.openGraph, title, description, url },
+    alternates: { canonical: url, languages: { ...languages, 'x-default': languages.en } },
+    openGraph: {
+      ...META.openGraph,
+      title,
+      description,
+      url,
+      locale: ogLocales[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocales[l]),
+    },
     twitter: { ...META.twitter, title, description },
   }
 }

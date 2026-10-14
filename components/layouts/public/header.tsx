@@ -6,11 +6,16 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
+import type { Dictionary } from '@/data/i18n'
+
 import { buttonVariants } from '@/components/ui/button-variants'
 import { navLinks, site } from '@/data/site'
+import { localizePath, splitLocale, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
-export function SiteHeader() {
+import { LanguageSwitcher } from './language-switcher'
+
+export function SiteHeader({ locale, t }: { locale: Locale; t: Dictionary['nav'] }) {
   const pathname = usePathname()
   // The menu is open only on the route it was opened on, so any navigation closes it
   const [openOn, setOpenOn] = useState<string | null>(null)
@@ -39,8 +44,9 @@ export function SiteHeader() {
     }
   }, [mobileOpen])
 
+  const { path } = splitLocale(pathname)
   const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
+    href === '/' ? path === '/' : path === href || path.startsWith(`${href}/`)
 
   return (
     <header
@@ -50,7 +56,10 @@ export function SiteHeader() {
       <div className="size-full mx-auto max-w-7xl px-4 bg-card/80 backdrop-blur-xl rounded-xl lg:rounded-2xl border border-border shadow-[0_2px_16px_rgba(0,0,0,0.35)] md:px-2 flex items-center justify-start">
         <div className="flex items-center justify-between w-full my-auto inset-x-0">
           <div className="flex items-center flex-1 lg:flex-none pl-1">
-            <Link href="/" className="text-lg font-semibold text-foreground">
+            <Link
+              href={localizePath(locale, '/')}
+              className="text-lg font-semibold text-foreground"
+            >
               <Image
                 src="/assets/images/brand-logo.png"
                 alt="Montara Project"
@@ -65,21 +74,21 @@ export function SiteHeader() {
             </span>
             <div className="items-center hidden ml-6 lg:flex">
               <nav
-                aria-label="Main"
+                aria-label={t.mainLabel}
                 className="relative z-10 flex max-w-max flex-1 items-center justify-center"
               >
                 <ul className="group flex flex-1 list-none items-center justify-center space-x-1">
                   {navLinks.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.key}>
                       <Link
-                        href={link.href}
+                        href={localizePath(locale, link.href)}
                         aria-current={isActive(link.href) ? 'page' : undefined}
                         className={cn(
                           'relative h-10 px-4 py-2 text-sm font-medium rounded-md w-max transition-colors duration-200 hover:text-foreground hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60',
                           isActive(link.href) ? 'text-foreground' : 'text-muted-foreground'
                         )}
                       >
-                        {link.label}
+                        {t.links[link.key]}
                         {isActive(link.href) && (
                           <span
                             aria-hidden="true"
@@ -93,12 +102,13 @@ export function SiteHeader() {
               </nav>
             </div>
           </div>
-          <div className="items-center flex gap-2 lg:gap-4">
+          <div className="items-center flex gap-2 lg:gap-3">
+            <LanguageSwitcher locale={locale} label={t.languageLabel} className="hidden lg:flex" />
             <Link
               href={`mailto:${site.email}`}
               className={cn(buttonVariants(), 'px-3 hidden sm:inline-flex')}
             >
-              Start a project
+              {t.startProject}
               <ArrowRight className="hidden lg:block" />
             </Link>
             <button
@@ -107,7 +117,7 @@ export function SiteHeader() {
               onClick={() => setOpenOn(mobileOpen ? null : pathname)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-label={mobileOpen ? t.closeMenu : t.openMenu}
               className="inline-flex items-center justify-center rounded-md transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-95 select-none hover:bg-foreground/5 lg:hidden size-11 -mr-2"
             >
               {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -120,12 +130,12 @@ export function SiteHeader() {
             ref={menuRef}
             className="absolute top-[calc(100%+8px)] inset-x-0 p-4 z-20 bg-card rounded-xl border border-border shadow-[0_12px_40px_rgba(0,0,0,0.5)] lg:hidden"
           >
-            <nav aria-label="Mobile">
+            <nav aria-label={t.mobileLabel}>
               <ul className="flex flex-col w-full space-y-1">
                 {navLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.key}>
                     <Link
-                      href={link.href}
+                      href={localizePath(locale, link.href)}
                       aria-current={isActive(link.href) ? 'page' : undefined}
                       onClick={closeMenu}
                       className={cn(
@@ -133,18 +143,25 @@ export function SiteHeader() {
                         isActive(link.href) ? 'text-foreground' : 'text-muted-foreground'
                       )}
                     >
-                      {link.label}
+                      {t.links[link.key]}
                     </Link>
                   </li>
                 ))}
               </ul>
             </nav>
+            <LanguageSwitcher
+              locale={locale}
+              label={t.languageLabel}
+              variant="row"
+              onSwitch={closeMenu}
+              className="mt-3 border-t border-border pt-3"
+            />
             <Link
               href={`mailto:${site.email}`}
               onClick={closeMenu}
               className={cn(buttonVariants({ size: 'xl' }), 'mt-4 w-full sm:hidden')}
             >
-              Start a project
+              {t.startProject}
               <ArrowRight />
             </Link>
           </div>

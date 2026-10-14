@@ -4,8 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { buttonVariants } from '@/components/ui/button-variants'
-import { footerColumns, site } from '@/data/site'
+import { getDictionary } from '@/data/i18n'
+import { navLinks, services, site } from '@/data/site'
+import { localizePath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
+
+import { LanguageSwitcher } from './language-switcher'
 
 function GitHubIcon() {
   return (
@@ -48,7 +52,27 @@ const socialIcons: Record<string, ReactNode> = {
   LinkedIn: <LinkedInIcon />,
 }
 
-export function SiteFooter() {
+export function SiteFooter({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale)
+  const href = (path: string) => localizePath(locale, path)
+  const columns = [
+    {
+      title: t.footer.company,
+      links: [
+        ...navLinks.map((link) => ({ label: t.nav.links[link.key], href: href(link.href) })),
+        { label: t.footer.terms, href: href('/terms') },
+        { label: t.footer.privacy, href: href('/privacy') },
+      ],
+    },
+    {
+      title: t.footer.services,
+      links: services.map((service) => ({
+        label: t.services[service.slug].title,
+        href: href(`/services#${service.slug}`),
+      })),
+    },
+  ]
+
   return (
     <footer className="w-full relative mt-16 md:mt-24">
       <div
@@ -68,22 +92,22 @@ export function SiteFooter() {
             <span className="text-xl font-heading font-semibold">{site.name}</span>
           </div>
           <p className="text-sm text-foreground/60 mt-4 leading-relaxed">
-            {site.tagline}. We build backend, frontend, and DevOps solutions.
+            <span lang="en">{site.tagline}.</span> {t.footer.blurb}
           </p>
           <Link
             href={`mailto:${site.email}`}
             className={cn(buttonVariants({ size: 'lg' }), 'mt-8')}
           >
-            Start a project
+            {t.common.startProject}
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-8 w-full max-w-lg">
-          {footerColumns.map((col) => (
+          {columns.map((col) => (
             <div key={col.title} className="flex flex-col gap-4">
               <h2 className="text-sm font-semibold tracking-wide text-foreground">{col.title}</h2>
               <ul className="w-full">
                 {col.links.map((link) => (
-                  <li key={link.label} className="w-full">
+                  <li key={link.href} className="w-full">
                     <Link
                       href={link.href}
                       className="inline-block py-1.5 text-sm text-foreground/55 hover:text-brand transition-colors"
@@ -100,9 +124,10 @@ export function SiteFooter() {
       <div className="w-full">
         <div className="size-full mx-auto max-w-7xl px-4 md:px-12 py-6 border-t border-foreground/10 flex flex-col sm:flex-row gap-4 items-center justify-between">
           <p className="text-sm text-foreground/50">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. {t.footer.rights}
           </p>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher locale={locale} label={t.nav.languageLabel} />
             {site.socials.map((social) => (
               <a
                 key={social.label}
@@ -110,7 +135,7 @@ export function SiteFooter() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${social.label} (opens in new tab)`}
+                aria-label={`${social.label} ${t.common.opensInNewTab}`}
               >
                 {socialIcons[social.label]}
               </a>

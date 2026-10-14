@@ -1,16 +1,23 @@
-import './globals.css'
+import '../globals.css'
 
 import type { Metadata, Viewport } from 'next'
 
 import { Outfit, Work_Sans } from 'next/font/google'
 
+import PublicLayout from '@/components/layouts/public/layout'
 import { META } from '@/lib/constants/meta'
+import { locales } from '@/lib/i18n'
+import { resolveLocale, type LocaleParams } from '@/lib/locale-params'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = META
 
 export const viewport: Viewport = {
   themeColor: '#080a0c',
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
 }
 
 const outfit = Outfit({
@@ -25,9 +32,14 @@ const workSans = Work_Sans({
   display: 'swap',
 })
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({
+  children,
+  params,
+}: Readonly<LocaleParams & { children: React.ReactNode }>) {
+  const locale = await resolveLocale({ params })
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <script
           defer
@@ -36,7 +48,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         ></script>
       </head>
       <body className={cn(outfit.variable, workSans.variable, 'font-sans antialiased')}>
-        {children}
+        <PublicLayout locale={locale}>{children}</PublicLayout>
       </body>
     </html>
   )
